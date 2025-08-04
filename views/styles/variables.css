@@ -1,0 +1,13 @@
+:root {
+  /* Spacing */
+  --spacing: 12px;
+  --smallSpacing: 6px;
+  --bigSpacing: 18px;
+
+  /* Border */
+  --outerBorder: 5px solid black;
+  --innerBorder: 3px solid black;
+
+  /* Radius */
+  --radius: 2%;
+}
