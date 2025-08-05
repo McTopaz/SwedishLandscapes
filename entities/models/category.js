@@ -3,6 +3,7 @@ export class Category {
         this.text = text;
         this.iconPath = iconPath;
         this.shortCut = shortCut;
+        this.isSelected = false;
     }
 
     get Text() {
@@ -15,5 +16,12 @@ export class Category {
 
     get ShortCut() {
         return this.shortCut;
+    }
+
+    get IsSelected() {
+        return this.isSelected;
+    }
+    set IsSelected(value) {
+        this.isSelected = value;
     }
 }

@@ -10,4 +10,17 @@
 
   /* Radius */
   --radius: 2%;
+  --bigRadious: 12px;
+
+  /* Texts */
+  --title: 64px;
+  --subTitle: 32px;
+  --font: 'Swedish Sans', sans-serif;
+
+  /* Colors */
+  --swedishBlue: #006AA7;
+  --swedishYellow: #FECC02;
+
+  /* Buttons */
+  --buttonHeight: 80px;
 }
