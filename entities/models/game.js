@@ -1,3 +1,5 @@
 export const game = {
-    Categories: []
+    Categories: [],
+    correctAnswers: 0,
+    incorrectAnswers: 0,
 }
