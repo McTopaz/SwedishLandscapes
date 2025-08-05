@@ -29,7 +29,9 @@ export class Menu extends Base {
     const container = document.getElementById("categories");
     container.innerHTML = "";
 
-    game.Categories.forEach(async (category, index) => {
+    for (let index = 0; index < game.Categories.length; index++) {
+      const category = game.Categories[index];
+
       // Main div.
       const div = document.createElement("div");
       div.style.display = 'flex';
@@ -55,11 +57,12 @@ export class Menu extends Base {
       const text = document.createElement("label");
       text.textContent = category.Text;
 
+      // Create category in view.
       div.appendChild(img);
       div.appendChild(checkbox);
       div.appendChild(text);
       container.appendChild(div);
-    });
+    };
   }
 
   #setupPlaySvgButton() {
