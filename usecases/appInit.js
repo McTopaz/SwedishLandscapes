@@ -17,7 +17,11 @@ function setup() {
 }
 
 function categories() {
-    var weapon = new Category("Vapen", "weapon", "1");
-
-    game.Categorys.push(weapon);
+    var weapon = new Category("Vapen", "/views/icons/Shield.svg", "1");
+    var flower = new Category("Blommor", "/views/icons/Flower.svg", "2");
+    var fish = new Category("Fiskar", "/views/icons/Fish.svg", "3");
+    
+    game.Categories.push(weapon);
+    game.Categories.push(flower);
+    game.Categories.push(fish);
 }
