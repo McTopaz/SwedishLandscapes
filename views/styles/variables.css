@@ -6,7 +6,7 @@
 
   /* Border */
   --outerBorder: 5px solid black;
-  --innerBorder: 3px solid black;
+  --innerBorder: 3px solid #C0C0C0;
 
   /* Radius */
   --radius: 2%;
@@ -20,6 +20,7 @@
   /* Colors */
   --swedishBlue: #006AA7;
   --swedishYellow: #FECC02;
+  --grey: #C0C0C0;
 
   /* Buttons */
   --buttonHeight: 80px;
