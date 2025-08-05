@@ -66,7 +66,7 @@ export class Menu extends Base {
   }
 
   #setupPlaySvgButton() {
-    fetch('/views/icons/play.svg')
+    fetch('/views/resources/images/svg/play.svg')
       .then(response => response.text())
       .then(data => {
         const container = document.getElementById('svgPlay');
