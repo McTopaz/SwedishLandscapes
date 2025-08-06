@@ -7,6 +7,7 @@ export class Game extends Base {
     super.init();
     this.#setupAnswers();
     this.#setupButtonHandlers();
+    this.#displayLandscapeSvg("/views/resources/images/svg/weapons/Lappland.svg");
   }
 
   #setupAnswers() {
@@ -45,8 +46,13 @@ export class Game extends Base {
     btn.addEventListener('click', function() {
         const buttonId = this.id;
         console.log('Clicked:', buttonId);
+      });
     });
-});
+  }
+
+  async #displayLandscapeSvg(path) {
+    const container = document.getElementById('landscapce');
+    var svg = await this.#loadSvgInContainer(path, container);
   }
 
   hanldeKeyboardEvent(event) {
