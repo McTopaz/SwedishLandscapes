@@ -6,6 +6,7 @@ export class Game extends Base {
   init() {
     super.init();
     this.#setupAnswers();
+    this.#setupButtonHandlers();
   }
 
   #setupAnswers() {
@@ -37,6 +38,15 @@ export class Game extends Base {
     element.style.height = size;
     element.style.marginRight = spacinig;
     element.style.color = color;
+  }
+
+  #setupButtonHandlers() {
+    document.querySelectorAll('.map-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const buttonId = this.id;
+        console.log('Clicked:', buttonId);
+    });
+});
   }
 
   hanldeKeyboardEvent(event) {
