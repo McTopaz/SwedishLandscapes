@@ -4,10 +4,11 @@ let currentViewInstance = null;
 
 export function showMenu() {
 
-  showView({
-    viewParts: ViewPaths.menu,
-    viewClass: "Menu"
-  });
+  runGame();
+  // showView({
+  //   viewParts: ViewPaths.menu,
+  //   viewClass: "Menu"
+  // });
 }
 
 export function runGame() {

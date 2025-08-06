@@ -1,0 +1,77 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.map {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    display: block;
+}
+
+.map-btn {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    background-image: url('/views/resources/images/svg/LandscapePin.svg');
+    background-size: contain;
+    background-position: center;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+.box {
+    display: inline-flex;
+    flex-direction: column;
+    font-family: monospace;
+    gap: 0.5rem;
+    margin: 0 auto;
+    border-radius: var(--bigRadious);
+    border: var(--innerBorder);
+    padding: var(--spacing);
+}
+
+.header {
+    font-size: var(--header);
+    font-weight: bold;
+    font-family: var(--font);
+    text-align: center;
+    color: black;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.counter {
+    font-size: var(--heading);
+    font-weight: bold;
+    font-family: var(--font);
+    text-align: center;
+    color: black;
+}

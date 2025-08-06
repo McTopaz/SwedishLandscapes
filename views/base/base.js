@@ -4,6 +4,8 @@ export class Base {
   constructor() {
   }
 
+  #rootStyles = getComputedStyle(document.documentElement);
+
   init() {
     this._onKeyDown = this._onKeyDown.bind(this);
     this.attachKeyboard();
@@ -30,6 +32,11 @@ export class Base {
 
   detachKeyboard() {
     document.removeEventListener('keydown', this._onKeyDown);
+  }
+
+  getStylePropertyByName(name) {
+    const property = this.#rootStyles.getPropertyValue(name).trim();
+    return property
   }
 }
 
