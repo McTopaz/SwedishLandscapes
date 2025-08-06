@@ -20,8 +20,10 @@ function categories() {
     var weapon = new Category("Vapen", "/views/resources/images/svg/Shield.svg", "1");
     var flower = new Category("Blommor", "/views/resources/images/svg/Flower.svg", "2");
     var fish = new Category("Fiskar", "/views/resources/images/svg/Fish.svg", "3");
+    var chemicalElement = new Category("Chemical element", "/views/resources/images/svg/ChemicalElement.svg", "4");
     
     game.Categories.push(weapon);
     game.Categories.push(flower);
     game.Categories.push(fish);
+    game.Categories.push(chemicalElement);
 }
