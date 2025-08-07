@@ -1,4 +1,4 @@
-const Landscapes = Object.freeze({
+export const Landscapes = Object.freeze({
     // Norrland
     Lappland: "Lappland",
     Norrbotten: "Norrbotten",
