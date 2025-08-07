@@ -1,13 +1,18 @@
 export class Category {
-    constructor(text, iconPath, shortCut) {
-        this.text = text;
+    constructor(type, title, iconPath, shortCut) {
+        this.type = type;
+        this.title = title;
         this.iconPath = iconPath;
         this.shortCut = shortCut;
         this.isSelected = false;
     }
 
-    get Text() {
-        return this.text;
+    get Type() {
+        return this.type;
+    }
+
+    get Title() {
+        return this.title;
     }
 
     get IconPath() {
