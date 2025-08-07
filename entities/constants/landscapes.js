@@ -1,4 +1,4 @@
-const LandscapeEnum = Object.freeze({
+const Landscapes = Object.freeze({
     // Norrland
     Lappland: "Lappland",
     Norrbotten: "Norrbotten",
