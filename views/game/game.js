@@ -77,6 +77,7 @@ export class Game extends Base {
     console.log("Correct answer!");
     game.correctAnswers++;
     this.#updateAnswerCounters();
+    this.#playSound("/resources/sounds/Correct.wav");
     onCorrectAnswer();
     this.#displayLandscape();
   }
@@ -85,6 +86,7 @@ export class Game extends Base {
     console.log("Incorrect answer!");
     game.incorrectAnswers++;
     this.#updateAnswerCounters();
+    this.#playSound("/resources/sounds/Error.wav");
     onIncorrectAnswer();
     this.#displayLandscape();
   }
@@ -94,6 +96,13 @@ export class Game extends Base {
     const incorrectCounter = document.getElementById("incorrectCounter");
     correctCounter.textContent = game.correctAnswers;
     incorrectCounter.textContent = game.incorrectAnswers;
+  }
+
+  #playSound(path) {
+    const audio = new Audio(path);
+    audio.play().catch(error => {
+      console.error("Error playing sound:", error);
+    });
   }
 
   hanldeKeyboardEvent(event) {
