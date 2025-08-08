@@ -62,7 +62,7 @@ export class Game extends Base {
       return;
     }
     else {
-      console.log("Displaying landscape:", this.#currentLandscape);
+      console.log("Displaying landscape:", this.#currentLandscape.landscape);
       this.#displayLandscapeSvg(this.#currentLandscape.path);
     }
   }
@@ -82,7 +82,6 @@ export class Game extends Base {
   }
 
   #correrctAnswer() {
-    console.log("Correct answer!");
     game.correctAnswers++;
     this.#updateAnswerCounters();
     this.#playSound("/resources/sounds/Correct.wav");
@@ -91,7 +90,6 @@ export class Game extends Base {
   }
 
   #incorrerctAnswer() {
-    console.log("Incorrect answer!");
     game.incorrectAnswers++;
     this.#updateAnswerCounters();
     this.#playSound("/resources/sounds/Error.wav");
