@@ -45,13 +45,13 @@ export class Game extends Base {
     element.style.color = color;
   }
 
-#setupButtonHandlers() {
-  document.querySelectorAll('.map-btn').forEach(btn => {
-    btn.addEventListener('click', (event) => {
-      this.#handleLandscapeButtonPressed(event.currentTarget);
+  #setupButtonHandlers() {
+    document.querySelectorAll('.map-btn').forEach(btn => {
+      btn.addEventListener('click', (event) => {
+        this.#handleLandscapeButtonPressed(event.currentTarget);
+      });
     });
-  });
-}
+  }
 
   async #displayLandscape() {
     this.#currentLandscape = getNextLandscape();
