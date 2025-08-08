@@ -44,15 +44,13 @@ export class Game extends Base {
     element.style.color = color;
   }
 
-  #setupButtonHandlers() {
-    document.querySelectorAll('.map-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-        const landscape = this.dataset.landscape;
-        const id = this.id;
-        console.log('Clicked:', landscape, " ID:", id);
-      });
+#setupButtonHandlers() {
+  document.querySelectorAll('.map-btn').forEach(btn => {
+    btn.addEventListener('click', (event) => {
+      this.#handleLandscapeButtonPressed(event.currentTarget);
     });
-  }
+  });
+}
 
   async #displayLandscape() {
     this.#currentLandscape = getNextLandscape();
@@ -64,6 +62,22 @@ export class Game extends Base {
   async #displayLandscapeSvg(path) {
     const container = document.getElementById('landscapce');
     var svg = await this.#loadSvgInContainer(path, container);
+  }
+
+  #handleLandscapeButtonPressed(button) {
+    const landscape = button.dataset.landscape;
+    console.log("Landscape button pressed:", landscape);
+
+    if (this.#currentLandscape.landscape === landscape) {
+      console.log("Correct answer!");
+      onCorrectAnswer();
+      this.#displayLandscape();
+    }
+    else {
+      console.log("Incorrect answer!");
+      onIncorrectAnswer();
+      this.#displayLandscape();
+    }
   }
 
   hanldeKeyboardEvent(event) {
