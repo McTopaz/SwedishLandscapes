@@ -3,10 +3,11 @@
   justify-content: center;
   align-items: center;
   height: 100vh; /* fyller hela skärmen */
+  background-color: var(--swedishBlue);
 }
 
 .container h1 {
   font-size: 4rem;
-  color: #2e8b57;
+  color: var(--swedishYellow);
   text-align: center;
 }
