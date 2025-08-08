@@ -3,12 +3,10 @@ import { ViewPaths } from "/entities/models/urlPaths.js";
 let currentViewInstance = null;
 
 export function showMenu() {
-
-  runGame();
-  // showView({
-  //   viewParts: ViewPaths.menu,
-  //   viewClass: "Menu"
-  // });
+  showView({
+    viewParts: ViewPaths.menu,
+    viewClass: "Menu"
+  });
 }
 
 export function runGame() {
