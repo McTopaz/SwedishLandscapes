@@ -1,13 +1,16 @@
 import { Base } from "../base/base.js";
 import { game} from "/entities/models/game.js";
+import { getNextLandscape, onCorrectAnswer, onIncorrectAnswer } from "/usecases/game.js";
 
 export class Game extends Base {
+
+  #currentLandscape = null;
 
   init() {
     super.init();
     this.#setupAnswers();
     this.#setupButtonHandlers();
-    this.#displayLandscapeSvg("/views/resources/images/svg/weapons/Lappland.svg");
+    this.#displayLandscape();
   }
 
   #setupAnswers() {
@@ -44,10 +47,18 @@ export class Game extends Base {
   #setupButtonHandlers() {
     document.querySelectorAll('.map-btn').forEach(btn => {
     btn.addEventListener('click', function() {
-        const buttonId = this.id;
-        console.log('Clicked:', buttonId);
+        const landscape = this.dataset.landscape;
+        const id = this.id;
+        console.log('Clicked:', landscape, " ID:", id);
       });
     });
+  }
+
+  async #displayLandscape() {
+    this.#currentLandscape = getNextLandscape();
+    console.log("Displaying landscape:", this.#currentLandscape);
+
+    this.#displayLandscapeSvg(this.#currentLandscape.path);
   }
 
   async #displayLandscapeSvg(path) {
