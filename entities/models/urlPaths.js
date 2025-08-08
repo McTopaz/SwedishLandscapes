@@ -9,4 +9,5 @@ export const ViewPaths = {
   base: new ViewParts("base", BASE_PATH),
   menu: new ViewParts("menu", BASE_PATH),
   game: new ViewParts("game", BASE_PATH),
+  result: new ViewParts("result", BASE_PATH),
 };
