@@ -16,6 +16,13 @@ export function runGame() {
     });
 }
 
+export function showResult() {
+  showView({
+    viewParts: ViewPaths.result,
+    viewClass: "Result"
+  });
+}
+
 function showView({ viewParts, viewClass }) {
   //printViewArguments(viewParts, viewClass);
   ensureBaseCssLoaded();
