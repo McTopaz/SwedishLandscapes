@@ -8,6 +8,7 @@ export class Menu extends Base {
 
   #swedishBlue = "";
   #swedishYellow = "";
+  #grey = "";
 
   init() {
     super.init();
@@ -21,9 +22,9 @@ export class Menu extends Base {
   }
 
   #loadColors() {
-    const rootStyles = getComputedStyle(document.documentElement);
-    this.#swedishBlue = rootStyles.getPropertyValue('--swedishBlue').trim();
-    this.#swedishYellow = rootStyles.getPropertyValue('--swedishYellow').trim();
+    this.#swedishBlue = super.getStylePropertyByName('--swedishBlue').trim();
+    this.#swedishYellow = super.getStylePropertyByName('--swedishYellow').trim();
+    this.#grey = super.getStylePropertyByName("--grey");
   }
 
   async #displayCategories() {
@@ -53,6 +54,7 @@ export class Menu extends Base {
       checkbox.checked = category.IsSelected;
       checkbox.addEventListener("change", () => {
         category.IsSelected = checkbox.checked;
+        this.#checkForNoCategorySelected();
       });
 
       // Text.
@@ -86,6 +88,32 @@ export class Menu extends Base {
     element.style.height = '32px';
     element.style.marginRight = '10px';
     element.style.color = color;
+  }
+
+  #checkForNoCategorySelected() {
+    const checkboxContainer = document.getElementById("categories");
+    const checkboxes = checkboxContainer.querySelectorAll('input[type="checkbox"]');
+    const anyChecked = Array.from(checkboxes).some(cb => cb.checked);
+
+    anyChecked
+      ? this.#enablePlayButton()
+      : this.#disablePlayButton();
+  }
+
+  #enablePlayButton() {
+    const playButton = document.getElementById("play");
+    const color = this.#swedishYellow;
+    playButton.disabled = true;
+    playButton.style.backgroundColor = color;
+    playButton.style.cursor = 'pointer';
+  }
+
+  #disablePlayButton() {
+    const playButton = document.getElementById("play");
+    const color = this.#grey;
+    playButton.disabled = true;
+    playButton.style.backgroundColor = color;
+    playButton.style.cursor = 'not-allowed';
   }
 
   #playClicked() {
