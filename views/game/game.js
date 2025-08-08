@@ -54,6 +54,12 @@ export class Game extends Base {
 
   async #displayLandscape() {
     this.#currentLandscape = getNextLandscape();
+
+    if (!this.#currentLandscape) {
+      console.log("No more landscapes available.");
+      return;
+    }
+
     console.log("Displaying landscape:", this.#currentLandscape);
 
     this.#displayLandscapeSvg(this.#currentLandscape.path);
