@@ -1,6 +1,7 @@
 import { Base } from "../base/base.js";
 import { game} from "/entities/models/game.js";
 import { getNextLandscape, onCorrectAnswer, onIncorrectAnswer } from "/usecases/game.js";
+import { showResult } from "/usecases/appFlow.js";
 
 export class Game extends Base {
 
@@ -57,12 +58,13 @@ export class Game extends Base {
 
     if (!this.#currentLandscape) {
       console.log("No more landscapes available.");
+      showResult();
       return;
     }
-
-    console.log("Displaying landscape:", this.#currentLandscape);
-
-    this.#displayLandscapeSvg(this.#currentLandscape.path);
+    else {
+      console.log("Displaying landscape:", this.#currentLandscape);
+      this.#displayLandscapeSvg(this.#currentLandscape.path);
+    }
   }
 
   async #displayLandscapeSvg(path) {
