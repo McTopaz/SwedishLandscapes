@@ -6,7 +6,7 @@ export const landscapeWeapons = [
     { landscape: Landscapes.Västerbotten, path: "/views/resources/images/svg/weapons/Vasterbotten.svg" },
     { landscape: Landscapes.Jämtland, path: "/views/resources/images/svg/weapons/Jamtland.svg" },
     { landscape: Landscapes.Ångermanland, path: "/views/resources/images/svg/weapons/Angermanland.svg" },
-    { landscape: Landscapes.Härjedalen, path: "/views/resources/images/svg/weapons/Harejedalen.svg" },
+    { landscape: Landscapes.Härjedalen, path: "/views/resources/images/svg/weapons/Harjedalen.svg" },
     { landscape: Landscapes.Medelpad, path: "/views/resources/images/svg/weapons/Medelpad.svg" },
     { landscape: Landscapes.Hälsingland, path: "/views/resources/images/svg/weapons/Halsingland.svg" },
     { landscape: Landscapes.Gästrikland, path: "/views/resources/images/svg/weapons/Gastrikland.svg" },
