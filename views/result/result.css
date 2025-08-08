@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* fyller hela skärmen */
+}
+
+.container h1 {
+  font-size: 4rem;
+  color: #2e8b57;
+  text-align: center;
+}
