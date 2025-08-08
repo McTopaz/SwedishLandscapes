@@ -3,7 +3,7 @@ export const Landscapes = Object.freeze({
     Lappland: "Lappland",
     Norrbotten: "Norrbotten",
     Västerbotten: "Västerbotten",
-    Jämland: "Jämland",
+    Jämtland: "Jämland",
     Ångermanland: "Ångermanland",
     Härjedalen: "Härjedalen",
     Medelpad: "Medelpad",
