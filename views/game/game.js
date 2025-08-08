@@ -68,16 +68,32 @@ export class Game extends Base {
     const landscape = button.dataset.landscape;
     console.log("Landscape button pressed:", landscape);
 
-    if (this.#currentLandscape.landscape === landscape) {
-      console.log("Correct answer!");
-      onCorrectAnswer();
-      this.#displayLandscape();
-    }
-    else {
-      console.log("Incorrect answer!");
-      onIncorrectAnswer();
-      this.#displayLandscape();
-    }
+    this.#currentLandscape.landscape === landscape
+      ? this.#correrctAnswer()
+      : this.#incorrerctAnswer();
+  }
+
+  #correrctAnswer() {
+    console.log("Correct answer!");
+    game.correctAnswers++;
+    this.#updateAnswerCounters();
+    onCorrectAnswer();
+    this.#displayLandscape();
+  }
+
+  #incorrerctAnswer() {
+    console.log("Incorrect answer!");
+    game.incorrectAnswers++;
+    this.#updateAnswerCounters();
+    onIncorrectAnswer();
+    this.#displayLandscape();
+  }
+
+  #updateAnswerCounters() {
+    const correctCounter = document.getElementById("correctCounter");
+    const incorrectCounter = document.getElementById("incorrectCounter");
+    correctCounter.textContent = game.correctAnswers;
+    incorrectCounter.textContent = game.incorrectAnswers;
   }
 
   hanldeKeyboardEvent(event) {
