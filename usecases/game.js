@@ -1,6 +1,6 @@
 import { game } from "/entities/models/game.js";
 import { CategoryTypes } from "/entities/constants/CategoryTypes.js";
-import { landscapeWeapons } from "/infrastructure/landscapesMapping/landscapeWeapons.js";
+import { provincialCoatOfArms } from "/infrastructure/landscapesMapping/provincialCoatOfArms.js";
 
 export function prepareGame() {
     var allItems = [];
@@ -14,8 +14,8 @@ export function prepareGame() {
 }
 
 function fetchLandscapeDataForCategory(category) {
-    if (category.CategoryType == CategoryTypes.Weapon) {
-        return landscapeWeapons;
+    if (category.Type == CategoryTypes.ProvincialCoatOfArms) {
+        return provincialCoatOfArms;
     }
 }
 

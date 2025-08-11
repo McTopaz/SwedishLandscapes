@@ -1,6 +1,6 @@
 import { Landscapes } from "/entities/constants/Landscapes.js";
 
-export const landscapeWeapons = [
+export const provincialCoatOfArms = [
     { landscape: Landscapes.Lappland, path: "/views/resources/images/svg/weapons/Lappland.svg" },
     { landscape: Landscapes.Norrbotten, path: "/views/resources/images/svg/weapons/Norrbotten.svg" },
     { landscape: Landscapes.Västerbotten, path: "/views/resources/images/svg/weapons/Vasterbotten.svg" },

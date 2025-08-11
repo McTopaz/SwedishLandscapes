@@ -19,12 +19,12 @@ function setup() {
 }
 
 function categories() {
-    var weapon = new Category(CategoryTypes.Weapon, "Weapon", CategorySvg[CategoryTypes.Weapon], "1", true);
+    var provincialCoatOfArms = new Category(CategoryTypes.ProvincialCoatOfArms, "Provincial coat of arms", CategorySvg[CategoryTypes.ProvincialCoatOfArms], "1", true);
     var flower = new Category(CategoryTypes.Flower, "Flowers", CategorySvg[CategoryTypes.Flowers], "2");
     var fish = new Category(CategoryTypes.Fish, "Fishes", CategorySvg[CategoryTypes.Fishes], "3");
     var chemicalElement = new Category(CategoryTypes.ChemicalElement, "Chemical elements", CategorySvg[CategoryTypes.ChecmicalElements], "4");
     
-    game.Categories.push(weapon);
+    game.Categories.push(provincialCoatOfArms);
     game.Categories.push(flower);
     game.Categories.push(fish);
     game.Categories.push(chemicalElement);

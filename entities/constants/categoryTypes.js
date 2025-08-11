@@ -1,5 +1,5 @@
 export  const CategoryTypes = Object.freeze({
-    Weapons: "Weapons",
+    ProvincialCoatOfArms: "Provincial coat of arms",
     Flowers: "Flowers",
     Fishes: "Fishes",
     ChecmicalElements: "ChecmicalElements",
