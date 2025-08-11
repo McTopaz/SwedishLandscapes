@@ -77,13 +77,15 @@ export class Game extends Base {
     console.log("Landscape button pressed:", landscape);
 
     this.#currentLandscape.landscape === landscape
-      ? this.#correrctAnswer()
+      ? this.#correrctAnswer(button)
       : this.#incorrerctAnswer();
   }
 
-  #correrctAnswer() {
+  #correrctAnswer(button) {
     game.correctAnswers++;
     this.#updateAnswerCounters();
+    this.#changeButtonToCorrectSvg(button);
+    
     this.#playSound("/resources/sounds/Correct.wav");
     onCorrectAnswer();
     this.#displayLandscape();
@@ -102,6 +104,16 @@ export class Game extends Base {
     const incorrectCounter = document.getElementById("incorrectCounter");
     correctCounter.textContent = game.correctAnswers;
     incorrectCounter.textContent = game.incorrectAnswers;
+  }
+
+  async #changeButtonToCorrectSvg(button) {
+    button.style.backgroundImage = "none";
+    const check = "views/resources/images/svg/Check.svg";
+    const size = super.getStylePropertyByName("--title");
+    const svg = await this.#loadSvgInContainer(check, button);
+    svg.style.color = "lime";
+    svg.style.width = size;
+    svg.style.height = size;
   }
 
   #playSound(path) {
