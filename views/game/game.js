@@ -109,11 +109,16 @@ export class Game extends Base {
   async #changeButtonToCorrectSvg(button) {
     button.style.backgroundImage = "none";
     const check = "views/resources/images/svg/Check.svg";
-    const size = super.getStylePropertyByName("--title");
+    const size = super.getStylePropertyByName("--subTitle");
     const svg = await this.#loadSvgInContainer(check, button);
     svg.style.color = "lime";
     svg.style.width = size;
     svg.style.height = size;
+
+    const left = button.dataset.answerLeft;
+    const top = button.dataset.answerTop;
+    button.style.left = left;
+    button.style.top = top;
   }
 
   #playSound(path) {
