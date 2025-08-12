@@ -6,6 +6,8 @@ import { showResult } from "/usecases/appFlow.js";
 export class Game extends Base {
 
   #currentLandscape = null;
+  #green = super.getStylePropertyByName("--green");
+  #red = super.getStylePropertyByName("--red");
 
   init() {
     super.init();
@@ -17,8 +19,8 @@ export class Game extends Base {
   #setupAnswers() {
     const check = "views/resources/images/svg/Check.svg";
     const cross = "views/resources/images/svg/Cross.svg";
-    this.#setupAnswerSvg(check, "check", "lime");
-    this.#setupAnswerSvg(cross, "cross", "red");
+    this.#setupAnswerSvg(check, "check", this.#green);
+    this.#setupAnswerSvg(cross, "cross", this.#red);
   }
 
   async #setupAnswerSvg(svgPath, containerName, color) {
@@ -111,7 +113,7 @@ export class Game extends Base {
     const check = "views/resources/images/svg/Check.svg";
     const size = super.getStylePropertyByName("--subTitle");
     const svg = await this.#loadSvgInContainer(check, button);
-    svg.style.color = "lime";
+    svg.style.color = this.#green;
     svg.style.width = size;
     svg.style.height = size;
 
