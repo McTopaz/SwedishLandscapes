@@ -71,8 +71,33 @@ export class Game extends Base {
 
   async #displayLandscapeSvg(path) {
     const container = document.getElementById('landscapce');
-    var svg = await this.#loadSvgInContainer(path, container);
+    const svg = await this.#loadSvgInContainer(path, container);
+ 
+    this.#ensureViewBox(svg);
+    this.#scaleSvgToFit(svg);
   }
+
+  #ensureViewBox(svgElement) {
+      if (!svgElement.hasAttribute('viewBox')) {
+          const width = parseFloat(svgElement.getAttribute('width')) || 100;
+          const height = parseFloat(svgElement.getAttribute('height')) || 100;
+          this.#addViewBox(svgElement, width, height);
+      }
+  }
+
+  #addViewBox(svgElement, width, height) {
+      svgElement.setAttribute('viewBox', `0 0 ${width} ${height}`);
+  }
+
+  #scaleSvgToFit(svgElement) {
+      svgElement.removeAttribute('width');
+      svgElement.removeAttribute('height');
+      svgElement.style.width = '100%';
+      svgElement.style.height = '100%';
+      svgElement.style.display = 'block'; // Tar bort inline gap
+  }
+
+
 
   #handleLandscapeButtonPressed(button) {
     const landscape = button.dataset.landscape;
