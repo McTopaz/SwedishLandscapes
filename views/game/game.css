@@ -69,6 +69,20 @@
     color: black;
 }
 
+.verticalStack {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrera både SVG och text horisontellt */
+    gap: 0.5rem;          /* Avstånd mellan SVG och text */
+    height: 100%;
+    width: 100%;
+}
+
+#text {
+    text-align: center;
+    font-size: var(--heading);
+}
+
 #landscapce {
   display: flex;
   justify-content: center;  /* Centrera horisontellt */

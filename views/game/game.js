@@ -65,16 +65,20 @@ export class Game extends Base {
     }
     else {
       console.log("Displaying landscape:", this.#currentLandscape.Landscape);
-      this.#displayLandscapeSvg(this.#currentLandscape.Path);
+      this.#displayLandscapeSvg();
     }
   }
 
-  async #displayLandscapeSvg(path) {
+  async #displayLandscapeSvg() {
+    // SVG
     const container = document.getElementById('landscapce');
-    const svg = await this.#loadSvgInContainer(path, container);
- 
+    const svg = await this.#loadSvgInContainer(this.#currentLandscape.Path, container);
     this.#ensureViewBox(svg);
     this.#scaleSvgToFit(svg);
+    
+    // Text
+    const text = document.getElementById('text');
+    text.innerText = this.#currentLandscape.Text;
   }
 
   #ensureViewBox(svgElement) {
