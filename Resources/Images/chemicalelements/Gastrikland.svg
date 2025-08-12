@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg>
+<svg version="1.1" baseProfile="full" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" zoomAndPan="magnify" id="Electron shell Chromium" viewBox="-700 -700 1400 1400" width="1400" height="1400">
+<title id="title">Electron shells for element: Z=024 Cr (Chromium): 2,8,13,1</title>
+<desc id="element_description">024 Cr (Chromium) Legend_color:#ffc0c0</desc>
+<desc id="element_electron_configuration">2,8,13,1</desc>
+
+<defs>
+<circle id="electron" fill="#77868b" stroke="none" r="30"/>
+</defs>
+
+<circle fill="#ffc0c0" r="200" stroke="#343434" stroke-width="10"/>
+<g font-weight="bold" font="DejaVu Sans">
+<text x="0" y="50" font-size="150" text-anchor="middle">Cr</text>
+</g>
+
+<g stroke="#77868b" stroke-width="8" fill="none"><circle id="shell_1" r="300"/>
+<use id="electron_0_shell_1" xlink:href="#electron" y="-300"/>
+<use id="electron_1_shell_1" xlink:href="#electron_0_shell_1" transform="rotate(180)"/>
+<circle id="shell_2" r="400"/>
+<use id="electron_0_shell_2" xlink:href="#electron" y="-400"/>
+<use id="electron_1_shell_2" xlink:href="#electron_0_shell_2" transform="rotate(45)"/>
+<use id="electron_2_shell_2" xlink:href="#electron_0_shell_2" transform="rotate(90)"/>
+<use id="electron_3_shell_2" xlink:href="#electron_0_shell_2" transform="rotate(135)"/>
+<use id="electron_4_shell_2" xlink:href="#electron_0_shell_2" transform="rotate(180)"/>
+<use id="electron_5_shell_2" xlink:href="#electron_0_shell_2" transform="rotate(225)"/>
+<use id="electron_6_shell_2" xlink:href="#electron_0_shell_2" transform="rotate(270)"/>
+<use id="electron_7_shell_2" xlink:href="#electron_0_shell_2" transform="rotate(315)"/>
+<circle id="shell_3" r="500"/>
+<use id="electron_0_shell_3" xlink:href="#electron" y="-500"/>
+<use id="electron_1_shell_3" xlink:href="#electron_0_shell_3" transform="rotate(27.692308)"/>
+<use id="electron_2_shell_3" xlink:href="#electron_0_shell_3" transform="rotate(55.384615)"/>
+<use id="electron_3_shell_3" xlink:href="#electron_0_shell_3" transform="rotate(83.076923)"/>
+<use id="electron_4_shell_3" xlink:href="#electron_0_shell_3" transform="rotate(110.769231)"/>
+<use id="electron_5_shell_3" xlink:href="#electron_0_shell_3" transform="rotate(138.461538)"/>
+<use id="electron_6_shell_3" xlink:href="#electron_0_shell_3" transform="rotate(166.153846)"/>
+<use id="electron_7_shell_3" xlink:href="#electron_0_shell_3" transform="rotate(193.846154)"/>
+<use id="electron_8_shell_3" xlink:href="#electron_0_shell_3" transform="rotate(221.538462)"/>
+<use id="electron_9_shell_3" xlink:href="#electron_0_shell_3" transform="rotate(249.230769)"/>
+<use id="electron_10_shell_3" xlink:href="#electron_0_shell_3" transform="rotate(276.923077)"/>
+<use id="electron_11_shell_3" xlink:href="#electron_0_shell_3" transform="rotate(304.615385)"/>
+<use id="electron_12_shell_3" xlink:href="#electron_0_shell_3" transform="rotate(332.307692)"/>
+<circle id="shell_4" r="600"/>
+<use id="electron_0_shell_4" xlink:href="#electron" y="-600"/>
+</g>
+</svg>
