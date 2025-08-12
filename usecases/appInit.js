@@ -20,9 +20,9 @@ function setup() {
 
 function categories() {
     var provincialCoatOfArms = new Category(CategoryTypes.ProvincialCoatOfArms, "Provincial coat of arms", CategorySvg[CategoryTypes.ProvincialCoatOfArms], "1", true);
-    var flower = new Category(CategoryTypes.Flower, "Flowers", CategorySvg[CategoryTypes.Flowers], "2");
-    var fish = new Category(CategoryTypes.Fish, "Fishes", CategorySvg[CategoryTypes.Fishes], "3");
-    var chemicalElement = new Category(CategoryTypes.ChemicalElement, "Chemical elements", CategorySvg[CategoryTypes.ChecmicalElements], "4");
+    var flower = new Category(CategoryTypes.Flower, "Flowers", CategorySvg[CategoryTypes.Flowers], "2", false, true);
+    var fish = new Category(CategoryTypes.Fish, "Fishes", CategorySvg[CategoryTypes.Fishes], "3", false, true);
+    var chemicalElement = new Category(CategoryTypes.ChemicalElement, "Chemical elements", CategorySvg[CategoryTypes.ChecmicalElements], "4", false);
     
     game.Categories.push(provincialCoatOfArms);
     game.Categories.push(flower);
