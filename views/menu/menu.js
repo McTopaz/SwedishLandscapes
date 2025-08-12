@@ -104,7 +104,7 @@ export class Menu extends Base {
   #enablePlayButton() {
     const playButton = document.getElementById("play");
     const color = this.#swedishYellow;
-    playButton.disabled = true;
+    playButton.disabled = false;
     playButton.style.backgroundColor = color;
     playButton.style.cursor = 'pointer';
   }
