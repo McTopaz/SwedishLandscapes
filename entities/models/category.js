@@ -1,10 +1,11 @@
 export class Category {
-    constructor(type, title, iconPath, shortCut, isSelected = false) {
+    constructor(type, title, iconPath, shortCut, isSelected = false, isDisabled = false) {
         this.type = type;
         this.title = title;
         this.iconPath = iconPath;
         this.shortCut = shortCut;
         this.isSelected = isSelected;
+        this.isDisabled = isDisabled;
     }
 
     get Type() {
@@ -28,5 +29,9 @@ export class Category {
     }
     set IsSelected(value) {
         this.isSelected = value;
+    }
+    
+    get IsDisabled() {
+        return this.isDisabled;
     }
 }
