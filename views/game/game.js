@@ -64,8 +64,8 @@ export class Game extends Base {
       return;
     }
     else {
-      console.log("Displaying landscape:", this.#currentLandscape.landscape);
-      this.#displayLandscapeSvg(this.#currentLandscape.path);
+      console.log("Displaying landscape:", this.#currentLandscape.Landscape);
+      this.#displayLandscapeSvg(this.#currentLandscape.Path);
     }
   }
 
@@ -78,7 +78,7 @@ export class Game extends Base {
     const landscape = button.dataset.landscape;
     console.log("Landscape button pressed:", landscape);
 
-    this.#currentLandscape.landscape === landscape
+    this.#currentLandscape.Landscape === landscape
       ? this.#correrctAnswer(button)
       : this.#incorrerctAnswer();
   }
