@@ -52,6 +52,7 @@ export class Menu extends Base {
       checkbox.type = "checkbox";
       checkbox.style.marginRight = '10px';
       checkbox.checked = category.IsSelected;
+      checkbox.disabled = category.IsDisabled;
       checkbox.addEventListener("change", () => {
         category.IsSelected = checkbox.checked;
         this.#checkForNoCategorySelected();
