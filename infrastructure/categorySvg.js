@@ -1,4 +1,4 @@
-import { CategoryTypes } from "/entities/constants/categoryTypes.js";
+import { CategoryTypes } from "../entities/constants/categoryTypes.js";
 
 export const CategorySvg = {
     [CategoryTypes.ProvincialCoatOfArms]: "/views/resources/images/svg/Shield.svg",
