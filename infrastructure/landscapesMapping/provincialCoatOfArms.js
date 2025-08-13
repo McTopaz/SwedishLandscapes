@@ -1,5 +1,5 @@
-import { Landscapes } from "../../entities/constants/Landscapes.js";
-import { Landscape } from "../../entities/models/Landscape.js";
+import { Landscapes } from "../../entities/constants/landscapes.js";
+import { Landscape } from "../../entities/models/landscape.js";
 import { BASE_PATH } from "../../entities/models/urlPaths.js";
 
 export const provincialCoatOfArms = Object.freeze([
