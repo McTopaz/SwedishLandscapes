@@ -1,4 +1,4 @@
-import { ViewParts } from "/entities/models/viewParts.js";
+import { ViewParts } from "../../entities/models/viewParts.js";
 
 const repoName = "SwedishLandscapes";
 export const BASE_PATH = window.location.pathname.includes(`/${repoName}/`)
