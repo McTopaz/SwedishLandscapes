@@ -3,6 +3,7 @@ import { game } from "../entities/models/game.js";
 import { Category } from "../entities/models/category.js";
 import { CategoryTypes } from "../entities/constants/categoryTypes.js"
 import { CategorySvg } from "../infrastructure/categorySvg.js"; // ToDo: Should not be imported here.
+import { BASE_PATH } from "../entities/models/urlPaths.js";
 
 export function initializeApp() {
     setup();
@@ -16,6 +17,8 @@ function setup() {
     if (footer) {
         footer.textContent = `Version: ${Version}`;
     }
+
+    document.getElementById("favIcon").href = `${BASE_PATH}resources/images/Sweden512.png`;
 }
 
 function categories() {
