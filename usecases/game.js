@@ -1,7 +1,7 @@
-import { game } from "/entities/models/game.js";
-import { CategoryTypes } from "/entities/constants/CategoryTypes.js";
-import { provincialCoatOfArms } from "/infrastructure/landscapesMapping/provincialCoatOfArms.js";
-import { chemicalElements } from "/infrastructure/landscapesMapping/chemicalElements.js";
+import { game } from "../entities/models/game.js";
+import { CategoryTypes } from "../entities/constants/CategoryTypes.js";
+import { provincialCoatOfArms } from "../infrastructure/landscapesMapping/provincialCoatOfArms.js";
+import { chemicalElements } from "../infrastructure/landscapesMapping/chemicalElements.js";
 
 export function prepareGame() {
     var allItems = [];
