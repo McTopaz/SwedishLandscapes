@@ -3,6 +3,7 @@ import { Title, SubTitle } from "../../entities/constants/game.js";
 import { runGame } from "../../usecases/appFlow.js";
 import { game } from "../../entities/models/game.js";
 import { prepareGame } from "../../usecases/game.js";
+import { BASE_PATH } from "../../entities/models/urlPaths.js";
 
 export class Menu extends Base {
 
@@ -71,7 +72,7 @@ export class Menu extends Base {
   }
 
   #setupPlaySvgButton() {
-    const svg =  "/views/resources/images/svg/play.svg";
+    const svg =  `${BASE_PATH}resources/images/svg/Play.svg`;
     const container = document.getElementById('svgPlay');
     this.#loadSvgInContainer(svg, container);
   }
