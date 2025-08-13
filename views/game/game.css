@@ -33,7 +33,7 @@
     width: 48px;
     height: 48px;
     cursor: pointer;
-    background-image: url('/views/resources/images/svg/LandscapePin.svg');
+    background-image: url('../../resources/images/svg/LandscapePin.svg');
     background-size: contain;
     background-position: center;
 }
