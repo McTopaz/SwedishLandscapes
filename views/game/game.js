@@ -9,6 +9,7 @@ export class Game extends Base {
   #currentLandscape = null;
   #green = super.getStylePropertyByName("--green");
   #red = super.getStylePropertyByName("--red");
+  #blue = super.getStylePropertyByName("--blue");
 
   init() {
     super.init();
@@ -20,8 +21,12 @@ export class Game extends Base {
   #setupAnswers() {
     const check = `${BASE_PATH}resources/images/svg/Check.svg`;
     const cross = `${BASE_PATH}resources/images/svg/Cross.svg`;
+    const sum = `${BASE_PATH}resources/images/svg/Sum.svg`;
     this.#setupAnswerSvg(check, "check", this.#green);
     this.#setupAnswerSvg(cross, "cross", this.#red);
+    this.#setupAnswerSvg(sum, "sum", this.#blue);
+
+    document.getElementById("numberOfItems").innerText = game.numberOfItems;
   }
 
   async #setupAnswerSvg(svgPath, containerName, color) {
