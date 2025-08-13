@@ -1,4 +1,4 @@
-import { ViewPaths } from "../../entities/models/urlPaths.js";
+import { ViewPaths } from "../entities/models/urlPaths.js";
 
 let currentViewInstance = null;
 
