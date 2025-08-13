@@ -43,6 +43,7 @@ export class Menu extends Base {
 
       // SVG.
       const path = category.IconPath;
+      console.log("Path: ", path);
       const img = document.createElement("div");
       const color = index % 2 === 0 ? this.#swedishYellow : this.#swedishBlue;
       const svg = await this.#loadSvgInContainer(path, img);
