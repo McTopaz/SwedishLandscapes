@@ -2,6 +2,7 @@ import { Base } from "../base/base.js";
 import { game } from "../../entities/models/game.js";
 import { getNextLandscape, onCorrectAnswer, onIncorrectAnswer } from "../../usecases/game.js";
 import { showResult } from "../../usecases/appFlow.js";
+import { BASE_PATH } from "../../entities/models/urlPaths.js";
 
 export class Game extends Base {
 
@@ -17,8 +18,8 @@ export class Game extends Base {
   }
 
   #setupAnswers() {
-    const check = "views/resources/images/svg/Check.svg";
-    const cross = "views/resources/images/svg/Cross.svg";
+    const check = `${BASE_PATH}resources/images/svg/Check.svg`;
+    const cross = `${BASE_PATH}resources/images/svg/Cross.svg`;
     this.#setupAnswerSvg(check, "check", this.#green);
     this.#setupAnswerSvg(cross, "cross", this.#red);
   }
@@ -116,8 +117,7 @@ export class Game extends Base {
     game.correctAnswers++;
     this.#updateAnswerCounters();
     this.#changeButtonToCorrectSvg(button);
-    
-    this.#playSound("/resources/sounds/Correct.wav");
+    this.#playSound(`${BASE_PATH}resources/sounds/Correct.wav`);
     onCorrectAnswer();
     this.#displayLandscape();
   }
@@ -125,7 +125,7 @@ export class Game extends Base {
   #incorrerctAnswer() {
     game.incorrectAnswers++;
     this.#updateAnswerCounters();
-    this.#playSound("/resources/sounds/Error.wav");
+    this.#playSound(`${BASE_PATH}resources/sounds/Error.wav`);
     onIncorrectAnswer();
     this.#displayLandscape();
   }
@@ -139,7 +139,7 @@ export class Game extends Base {
 
   async #changeButtonToCorrectSvg(button) {
     button.style.backgroundImage = "none";
-    const check = "views/resources/images/svg/Check.svg";
+    const check = `${BASE_PATH}resources/images/svg/Check.svg`;
     const size = super.getStylePropertyByName("--subTitle");
     const svg = await this.#loadSvgInContainer(check, button);
     svg.style.color = this.#green;
