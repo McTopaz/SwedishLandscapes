@@ -1,4 +1,4 @@
-import { Version, CreatedBy } from "/entities/constants/game.js";
+import { Version, CreatedBy } from "../../entities/constants/game.js";
 
 export class Base {
   constructor() {
