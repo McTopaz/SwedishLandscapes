@@ -11,6 +11,7 @@ export function prepareGame() {
         allItems = allItems.concat(landscapeData);
     }
 
+    game.numberOfItems = allItems.length;
     game.Landscapes = allItems.sort(() => Math.random() - 0.5);
 }
 
