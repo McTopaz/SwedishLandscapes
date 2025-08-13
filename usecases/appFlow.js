@@ -24,7 +24,7 @@ export function showResult() {
 }
 
 function showView({ viewParts, viewClass }) {
-  printViewArguments(viewParts, viewClass);
+  //printViewArguments(viewParts, viewClass);
   ensureBaseCssLoaded();
   loadCssInDocument(viewParts.css);
 
