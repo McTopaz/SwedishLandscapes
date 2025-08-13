@@ -1,5 +1,5 @@
-import { Landscapes } from "/entities/constants/Landscapes.js";
-import { Landscape } from "/entities/models/Landscape.js";
+import { Landscapes } from "../../entities/constants/Landscapes.js";
+import { Landscape } from "../../entities/models/Landscape.js";
 
 export const chemicalElements = Object.freeze([
     // Norrland
