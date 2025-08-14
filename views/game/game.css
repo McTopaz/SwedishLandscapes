@@ -14,29 +14,25 @@
 
 .map-container {
     position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: inline-block;
 }
 
 .map {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
     display: block;
+    width: 100%;
+    height: auto;
 }
 
 .map-btn {
     position: absolute;
     width: 48px;
     height: 48px;
-    cursor: pointer;
     background-image: url('../../resources/images/svg/LandscapePin.svg');
     background-size: contain;
     background-position: center;
+    background-repeat: no-repeat;
 }
+
 
 .right {
     display: flex;
