@@ -13,9 +13,16 @@ export class Game extends Base {
 
   init() {
     super.init();
+    this.#setupMap();
     this.#setupAnswers();
     this.#setupButtonHandlers();
     this.#displayLandscape();
+  }
+
+  #setupMap() {
+    const path = `${BASE_PATH}resources/images/svg/SwedishLandscapes.svg`
+    console.log(path);
+    document.getElementById('map').src = path;
   }
 
   #setupAnswers() {
