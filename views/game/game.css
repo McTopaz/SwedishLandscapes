@@ -75,6 +75,15 @@
     width: 100%;
 }
 
+.horizontalStack {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    height: 100%;
+    width: 100%;
+}
+
 #text {
     text-align: center;
     font-size: var(--heading);

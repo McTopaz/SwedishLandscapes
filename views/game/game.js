@@ -10,19 +10,38 @@ export class Game extends Base {
   #green = super.getStylePropertyByName("--green");
   #red = super.getStylePropertyByName("--red");
   #blue = super.getStylePropertyByName("--blue");
+  #yellow = super.getStylePropertyByName("--swedishYellow");
 
   init() {
     super.init();
-    this.#setupMap();
+    this.#setupImages();
     this.#setupAnswers();
     this.#setupButtonHandlers();
     this.#displayLandscape();
   }
 
-  #setupMap() {
-    const path = `${BASE_PATH}resources/images/svg/SwedishLandscapes.svg`
-    console.log(path);
+  #setupImages() {
+    var path = "";
+    
+    path = `${BASE_PATH}resources/images/svg/SwedishLandscapes.svg`
     document.getElementById('map').src = path;
+
+    path = `${BASE_PATH}resources/images/svg/Help.svg`
+    document.getElementById('hint').src = path;
+
+    this.#setupHint();
+  }
+
+  async #setupHint() {
+    const path = `${BASE_PATH}resources/images/svg/Help.svg`
+    const container = document.getElementById('hint');
+    var svg = await this.#loadSvgInContainer(path, container);
+    this.#ensureViewBox(svg);
+    this.#scaleSvgToFit(svg);
+
+    svg.style.width = 128;
+    svg.style.width = 128;
+    svg.style.color = this.#yellow;
   }
 
   #setupAnswers() {
