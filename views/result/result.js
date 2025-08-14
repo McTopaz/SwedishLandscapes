@@ -16,6 +16,7 @@ export class Result extends Base {
     document.getElementById("subTitle").textContent = SubTitle;
 
     this.#setupAnswers();
+    this.#setupHomeSvgButton();
   }
 
   #setupAnswers() {
@@ -46,6 +47,12 @@ export class Result extends Base {
     element.style.height = size;
     element.style.marginRight = spacinig;
     element.style.color = color;
+  }
+
+    #setupHomeSvgButton() {
+    const svg =  `${BASE_PATH}resources/images/svg/Home.svg`;
+    const container = document.getElementById('svgHome');
+    this.#loadSvgInContainer(svg, container);
   }
 
   async #loadSvgInContainer(svgPath, container) {
