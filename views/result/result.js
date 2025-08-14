@@ -2,6 +2,7 @@ import { Base } from "../base/base.js";
 import { BASE_PATH } from "../../entities/models/urlPaths.js";
 import { game } from "../../entities/models/game.js";
 import { Title, SubTitle } from "../../entities/constants/game.js";
+import { showMenu } from "../../usecases/appFlow.js";
 
 export class Result extends Base {
 
@@ -53,6 +54,8 @@ export class Result extends Base {
     const svg =  `${BASE_PATH}resources/images/svg/Home.svg`;
     const container = document.getElementById('svgHome');
     this.#loadSvgInContainer(svg, container);
+
+    document.getElementById("home").addEventListener("click", this.#homeClicked);
   }
 
   async #loadSvgInContainer(svgPath, container) {
@@ -61,6 +64,10 @@ export class Result extends Base {
     container.innerHTML = svgText.trim();
     const svgElement = container.querySelector('svg');
     return svgElement;
+  }
+
+  #homeClicked() {
+    showMenu();
   }
 
   hanldeKeyboardEvent(event) {
