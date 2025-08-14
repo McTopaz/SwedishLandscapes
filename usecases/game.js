@@ -12,7 +12,7 @@ export function prepareGame() {
     }
 
     game.numberOfItems = allItems.length;
-    game.Landscapes = allItems.sort(() => Math.random() - 0.5);
+    game.landscapes = allItems.sort(() => Math.random() - 0.5);
 }
 
 function fetchLandscapeDataForCategory(category) {
@@ -25,20 +25,20 @@ function fetchLandscapeDataForCategory(category) {
 }
 
 export function getNextLandscape() {
-    if (!game.Landscapes || game.Landscapes.length === 0) return null;
-    return game.Landscapes[0];
+    if (!game.landscapes || game.landscapes.length === 0) return null;
+    return game.landscapes[0];
 }
 
 export function onCorrectAnswer() {
-    if (game.Landscapes && game.Landscapes.length > 0) {
-        game.Landscapes.shift();
+    if (game.landscapes && game.landscapes.length > 0) {
+        game.landscapes.shift();
     }
 }
 
 export function onIncorrectAnswer() {
-    if (game.Landscapes && game.Landscapes.length > 0) {
-        const item = game.Landscapes.shift();
-        game.Landscapes.push(item);
+    if (game.landscapes && game.landscapes.length > 0) {
+        const item = game.landscapes.shift();
+        game.landscapes.push(item);
     }
 }
 

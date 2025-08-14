@@ -1,6 +1,6 @@
 export const game = {
     categories: [],
-    Landscapes: [],
+    landscapes: [],
     correctAnswers: 0,
     incorrectAnswers: 0,
     numberOfItems: 0,
