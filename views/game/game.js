@@ -42,6 +42,14 @@ export class Game extends Base {
     svg.style.width = 128;
     svg.style.width = 128;
     svg.style.color = this.#yellow;
+
+    container.addEventListener('click', (event) => {
+        this.#hintPressed();
+      });
+  }
+
+  #hintPressed() {
+    window.alert(this.#currentLandscape.Landscape);
   }
 
   #setupAnswers() {
