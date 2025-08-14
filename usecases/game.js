@@ -6,7 +6,7 @@ import { chemicalElements } from "../infrastructure/landscapesMapping/chemicalEl
 export function prepareGame() {
     var allItems = [];
 
-    for (const category of game.Categories.filter(c => c.IsSelected)) {
+    for (const category of game.categories.filter(c => c.IsSelected)) {
         const landscapeData = fetchLandscapeDataForCategory(category);
         allItems = allItems.concat(landscapeData);
     }

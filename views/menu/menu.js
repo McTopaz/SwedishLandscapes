@@ -32,8 +32,8 @@ export class Menu extends Base {
     const container = document.getElementById("categories");
     container.innerHTML = "";
 
-    for (let index = 0; index < game.Categories.length; index++) {
-      const category = game.Categories[index];
+    for (let index = 0; index < game.categories.length; index++) {
+      const category = game.categories[index];
 
       // Main div.
       const div = document.createElement("div");

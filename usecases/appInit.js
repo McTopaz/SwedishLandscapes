@@ -27,8 +27,8 @@ function categories() {
     var fish = new Category(CategoryTypes.Fish, "Fishes", CategorySvg[CategoryTypes.Fishes], "3", false, true);
     var chemicalElement = new Category(CategoryTypes.ChemicalElement, "Chemical elements", CategorySvg[CategoryTypes.ChecmicalElements], "4", false);
     
-    game.Categories.push(provincialCoatOfArms);
-    game.Categories.push(flower);
-    game.Categories.push(fish);
-    game.Categories.push(chemicalElement);
+    game.categories.push(provincialCoatOfArms);
+    game.categories.push(flower);
+    game.categories.push(fish);
+    game.categories.push(chemicalElement);
 }
