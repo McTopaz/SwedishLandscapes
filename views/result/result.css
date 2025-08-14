@@ -1,13 +1,70 @@
+@import url('../styles/variables.css');
+
+
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* fyller hela skärmen */
-  background-color: var(--swedishBlue);
+  height: 100vh;
 }
 
 .container h1 {
   font-size: 4rem;
   color: var(--swedishYellow);
   text-align: center;
+}
+
+.verticalStack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    height: 100%;
+    width: 100%;
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+.title {
+    font-size: var(--title);
+    font-weight: bold;
+    font-family: var(--font);
+    text-align: center;
+    color: black;
+}
+
+.subTitle {
+    font-size: var(--subTitle);
+    font-weight: bold;
+    font-family: var(--font);
+    text-align: center;
+    color: black;
+}
+
+.box {
+    display: inline-flex;
+    flex-direction: column;
+    font-family: monospace;
+    gap: 0.5rem;
+    margin: 0 auto;
+    border-radius: var(--bigRadious);
+    border: var(--innerBorder);
+    padding: var(--spacing);
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.counter {
+    font-size: var(--heading);
+    font-weight: bold;
+    font-family: var(--font);
+    text-align: center;
+    color: black;
 }
