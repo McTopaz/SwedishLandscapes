@@ -9,7 +9,7 @@ export class Game extends Base {
   #currentLandscape = null;
   #green = super.getStylePropertyByName("--green");
   #red = super.getStylePropertyByName("--red");
-  #blue = super.getStylePropertyByName("--blue");
+  #blue = super.getStylePropertyByName("--swedishBlue");
   #yellow = super.getStylePropertyByName("--swedishYellow");
 
   init() {
