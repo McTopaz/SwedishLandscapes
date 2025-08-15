@@ -32,8 +32,32 @@
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+    
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
 }
 
+.status-bar-container {
+    width: 80%;
+    height: 8px;
+    margin-bottom: 5px;
+    display: flex;
+}
+
+.bar-part {
+  height: 100%;
+  background-color: #ccc;
+  border-left: 1px solid #fff;
+}
+
+.bar-part:first-child {
+  border-left: none;
+}
+
+.bar-part.correct {
+  background-color: var(--green);
+}
 
 .right {
     display: flex;
