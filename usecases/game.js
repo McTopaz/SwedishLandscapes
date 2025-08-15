@@ -8,6 +8,11 @@ export function prepareGame() {
 
     for (const category of game.categories.filter(c => c.IsSelected)) {
         const landscapeData = fetchLandscapeDataForCategory(category);
+
+        landscapeData.forEach(landscape => {
+            landscape.Category = category;
+        });
+
         allItems = allItems.concat(landscapeData);
     }
 
