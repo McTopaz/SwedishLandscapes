@@ -6,6 +6,9 @@ import { BASE_PATH } from "../../entities/models/urlPaths.js";
 
 export class Game extends Base {
 
+  #statusBarContainerName = 'status-bar-container';
+  #numberOfCategories = game.categories.filter(c => c.IsSelected).length;
+
   #currentLandscape = null;
   #green = super.getStylePropertyByName("--green");
   #red = super.getStylePropertyByName("--red");
@@ -14,10 +17,20 @@ export class Game extends Base {
 
   init() {
     super.init();
+    this.#setupLandscapeIndicationContainers();
     this.#setupImages();
     this.#setupAnswers();
     this.#setupButtonHandlers();
     this.#displayLandscape();
+  }
+
+  #setupLandscapeIndicationContainers() {
+    const landscapeButtons = document.querySelectorAll('.map-btn');
+    landscapeButtons.forEach(button => {
+      const statusBarContainer = document.createElement('div');
+      statusBarContainer.classList.add(this.#statusBarContainerName);
+      button.appendChild(statusBarContainer);
+    });
   }
 
   #setupImages() {
@@ -49,7 +62,7 @@ export class Game extends Base {
   }
 
   #hintPressed() {
-    window.alert(this.#currentLandscape.Landscape);
+    window.alert(this.#currentLandscape.Name);
   }
 
   #setupAnswers() {
@@ -104,7 +117,7 @@ export class Game extends Base {
       return;
     }
     else {
-      console.log("Displaying landscape:", this.#currentLandscape.Landscape);
+      console.log("Displaying landscape:", this.#currentLandscape.Name);
       this.#displayLandscapeSvg();
     }
   }
@@ -147,7 +160,7 @@ export class Game extends Base {
     const landscape = button.dataset.landscape;
     console.log("Landscape button pressed:", landscape);
 
-    this.#currentLandscape.Landscape === landscape
+    this.#currentLandscape.Name === landscape
       ? this.#correrctAnswer(button)
       : this.#incorrerctAnswer();
   }
@@ -155,9 +168,10 @@ export class Game extends Base {
   #correrctAnswer(button) {
     game.correctAnswers++;
     this.#updateAnswerCounters();
-    this.#changeButtonToCorrectSvg(button);
+    //this.#changeButtonToCorrectSvg(button);
     this.#playSound(`${BASE_PATH}resources/sounds/Correct.wav`);
     onCorrectAnswer();
+    this.#updateLandscapeIndicator(button);
     this.#displayLandscape();
   }
 
@@ -176,20 +190,57 @@ export class Game extends Base {
     incorrectCounter.textContent = game.incorrectAnswers;
   }
 
-  async #changeButtonToCorrectSvg(button) {
-    button.style.backgroundImage = "none";
-    const check = `${BASE_PATH}resources/images/svg/Check.svg`;
-    const size = super.getStylePropertyByName("--subTitle");
-    const svg = await this.#loadSvgInContainer(check, button);
-    svg.style.color = this.#green;
-    svg.style.width = size;
-    svg.style.height = size;
+#updateLandscapeIndicator(button) {
+  const container = button.querySelector(`.${this.#statusBarContainerName}`);
+  const buttonLandscapeName = button.dataset.landscape;
+  const left = game.landscapes.filter(l => l.Name === buttonLandscapeName).length;
+  
+  this.#clearStatusBar(container); 
 
-    const left = button.dataset.answerLeft;
-    const top = button.dataset.answerTop;
-    button.style.left = left;
-    button.style.top = top;
+  if (left === 0) {
+    this.#changeButtonToCheckSvg(button);
+  } else {
+    this.#displayStatusBar(button, left);
   }
+}
+
+#clearStatusBar(container) {
+    container.innerHTML = '';
+}
+
+async #changeButtonToCheckSvg(button) {
+  button.style.backgroundImage = "none";
+  const check = `${BASE_PATH}resources/images/svg/Check.svg`;
+  const size = super.getStylePropertyByName("--subTitle");
+  const svg = await this.#loadSvgInContainer(check, button);
+  svg.style.color = this.#green;
+  svg.style.width = size;
+  svg.style.height = size;
+
+  const left = button.dataset.answerLeft;
+  const top = button.dataset.answerTop;
+  button.style.left = left;
+  button.style.top = top;
+}
+
+#displayStatusBar(button, left) {
+  const container = button.querySelector(`.${this.#statusBarContainerName}`);
+  const width = 100 / this.#numberOfCategories;
+
+  const correctCount = this.#numberOfCategories - left;
+
+  for (let i = 0; i < this.#numberOfCategories; i++) {
+    const part = document.createElement('div');
+    part.style.width = `${width}%`;
+    part.classList.add('bar-part');
+
+    if (i < correctCount) {
+      part.classList.add('correct');
+    }
+    
+    container.appendChild(part);
+  }
+}
 
   #playSound(path) {
     const audio = new Audio(path);
