@@ -43,16 +43,14 @@
     height: 8px;
     margin-bottom: -2px;    
     display: flex;
+    border-radius: var(--bigRadious);
+    overflow: hidden;
 }
 
 .bar-part {
   height: 100%;
   background-color: #ccc;
   border-left: 1px solid #fff;
-}
-
-.bar-part:first-child {
-  border-left: none;
 }
 
 .bar-part.correct {
