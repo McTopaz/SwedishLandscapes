@@ -68,8 +68,17 @@
   color: var(--swedishBlue);  /* Only works due to the <path> element has the fill property set to "currentColor" /> */
 }
 
+/* Smart phone classes */
+
+@media (max-width: 600px) {
+  .spacer {
+    flex-grow: 0;
+    height: 1rem;
+  }
+}
+
 @media (max-width: 600px) {
   .play {
-    height: calc(var(--buttonHeight) * 2);
+    height: 12vh;
   }
 }
