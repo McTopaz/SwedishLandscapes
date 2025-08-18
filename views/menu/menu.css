@@ -68,7 +68,7 @@
   color: var(--swedishBlue);  /* Only works due to the <path> element has the fill property set to "currentColor" /> */
 }
 
-/* Smart phone classes */
+/* Phone settings */
 
 @media (max-width: 600px) {
   .spacer {
@@ -80,5 +80,9 @@
 @media (max-width: 600px) {
   .play {
     height: 12vh;
+  }
+  .playSvg svg {
+    height: 100%;
+    width: auto;
   }
 }

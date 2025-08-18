@@ -13,10 +13,10 @@
   --bigRadious: 12px;
 
   /* Texts */
-  --title: 64px;
-  --subTitle: 32px;
-  --header: 24px;
-  --heading: 18px;
+  --title: 8vw;
+  --subTitle: 4vw;
+  --header: 2vm;
+  --heading: 1vm;
   --font: 'Swedish Sans', sans-serif;
 
   /* Colors */
@@ -29,4 +29,11 @@
 
   /* Buttons */
   --buttonHeight: 80px;
+}
+
+/* Phone settings */
+@media (max-width: 600px) {
+  .title {
+    font-size: 12vw;
+  }
 }
