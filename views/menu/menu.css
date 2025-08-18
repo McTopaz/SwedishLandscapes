@@ -2,13 +2,10 @@
 
 .container {
   padding-bottom: var(--spacing);
-  max-height: 100%;
-  overflow: auto;
-  box-sizing: border-box;
-  flex: 1 1 auto;
   display: flex;
   flex-direction: column;
-  background-color: transparent;
+  height: 100%;
+  box-sizing: border-box;
 }
 
 .spacer {
@@ -69,13 +66,6 @@
 }
 
 /* Phone settings */
-
-@media (max-width: 600px) {
-  .spacer {
-    flex-grow: 0;
-    height: 1rem;
-  }
-}
 
 @media (max-width: 600px) {
   .play {
