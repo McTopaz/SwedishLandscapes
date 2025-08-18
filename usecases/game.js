@@ -4,6 +4,11 @@ import { provincialCoatOfArms } from "../infrastructure/landscapesMapping/provin
 import { flowers } from "../infrastructure/landscapesMapping/flowers.js";
 import { chemicalElements } from "../infrastructure/landscapesMapping/chemicalElements.js";
 
+export function resetCounters() {
+    game.correctAnswers = 0;
+    game.incorrectAnswers = 0;
+}
+
 export function prepareGame() {
     var allItems = [];
 
