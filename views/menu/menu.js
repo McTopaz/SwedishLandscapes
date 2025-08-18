@@ -2,7 +2,7 @@ import { Base } from "../base/base.js";
 import { Title, SubTitle } from "../../entities/constants/game.js";
 import { runGame } from "../../usecases/appFlow.js";
 import { game } from "../../entities/models/game.js";
-import { prepareGame } from "../../usecases/game.js";
+import { resetCounters, prepareGame } from "../../usecases/game.js";
 import { BASE_PATH } from "../../entities/models/urlPaths.js";
 
 export class Menu extends Base {
@@ -119,7 +119,8 @@ export class Menu extends Base {
   }
 
   #playClicked() {
-    prepareGame()
+    resetCounters();
+    prepareGame();
     runGame();
   }
 
