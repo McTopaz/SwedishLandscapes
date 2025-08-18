@@ -67,3 +67,9 @@
   display: block;
   color: var(--swedishBlue);  /* Only works due to the <path> element has the fill property set to "currentColor" /> */
 }
+
+@media (max-width: 600px) {
+  .play {
+    height: calc(var(--buttonHeight) * 2);
+  }
+}
