@@ -180,20 +180,16 @@ export class Game extends Base {
   {
     const imgElement = document.createElement('img');
     imgElement.src = path;
-    container.innerHTML = `<img src="${this.#currentLandscape.Path}" alt="Beskrivning av bilden">`;
+    container.innerHTML = '';
+    container.appendChild(imgElement);
     return imgElement;
   }
 
   #scaleGenericImageToFit(imgElement) {
-    // imgElement.style.width = '100%';
-    // imgElement.style.height = '100%';
-    // imgElement.style.objectFit = 'contain';
-    // imgElement.style.display = 'block';
-
-    console.log(imgElement.style.width);
-    console.log(imgElement.style.height);
-    console.log(imgElement.style.objectFit);
-    console.log(imgElement.style.display);
+    imgElement.style.width = '100%';
+    imgElement.style.height = '100%';
+    imgElement.style.objectFit = 'contain';
+    imgElement.style.display = 'block';
   }
 
   #handleLandscapeButtonPressed(button) {
