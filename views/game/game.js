@@ -118,7 +118,18 @@ export class Game extends Base {
     }
     else {
       console.log("Displaying landscape:", this.#currentLandscape.Name);
+      this.#displayLandscapeImage();
+    }
+  }
+
+  async #displayLandscapeImage() {
+    const path = this.#currentLandscape.Path;
+
+    if (path.endsWith(".svg")) {
       this.#displayLandscapeSvg();
+    }
+    else {
+      this.#displayLandscapeGenericImage();
     }
   }
 
@@ -154,7 +165,36 @@ export class Game extends Base {
       svgElement.style.display = 'block'; // Tar bort inline gap
   }
 
+  #displayLandscapeGenericImage() {
+    // Image
+    const container = document.getElementById('landscapce');
+    const img = this.#loadGenericImage(this.#currentLandscape.Path, container)
+    this.#scaleGenericImageToFit(img);
 
+    // Text
+    const text = document.getElementById('text');
+    text.innerText = this.#currentLandscape.Text;
+  }
+
+  #loadGenericImage(path, container)
+  {
+    const imgElement = document.createElement('img');
+    imgElement.src = path;
+    container.innerHTML = `<img src="${this.#currentLandscape.Path}" alt="Beskrivning av bilden">`;
+    return imgElement;
+  }
+
+  #scaleGenericImageToFit(imgElement) {
+    // imgElement.style.width = '100%';
+    // imgElement.style.height = '100%';
+    // imgElement.style.objectFit = 'contain';
+    // imgElement.style.display = 'block';
+
+    console.log(imgElement.style.width);
+    console.log(imgElement.style.height);
+    console.log(imgElement.style.objectFit);
+    console.log(imgElement.style.display);
+  }
 
   #handleLandscapeButtonPressed(button) {
     const landscape = button.dataset.landscape;
