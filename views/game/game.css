@@ -10,23 +10,26 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    height: 100%;
 }
 
 .map-container {
     position: relative;
-    display: inline-block;
+    height: 100%;
+    width: auto;
 }
 
 .map {
     display: block;
-    width: 100%;
-    height: auto;
+    height: 100%;
+    width: auto;
+    object-fit: contain;
 }
 
 .map-btn {
     position: absolute;
-    width: 48px;
-    height: 48px;
+    width: clamp(48px, 3vw, 75px);
+    height: clamp(48px, 3vw, 75px);
     cursor: pointer;
     background-image: url('../../resources/images/svg/LandscapePin.svg');
     background-size: contain;
