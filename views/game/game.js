@@ -91,7 +91,7 @@ export class Game extends Base {
   }
 
   #styleAnswerSvg(element, color) {
-    const size = super.getStylePropertyByName("--title");
+    const size = super.getStylePropertyByName("--subTitle");
     const spacinig = super.getStylePropertyByName("--spacing");
 
     element.style.width = size;
@@ -135,7 +135,8 @@ export class Game extends Base {
 
   async #displayLandscapeSvg() {
     // SVG
-    const container = document.getElementById('landscapce');
+    const container = document.getElementById('symbol');
+    console.log(container);
     const svg = await this.#loadSvgInContainer(this.#currentLandscape.Path, container);
     this.#ensureViewBox(svg);
     this.#scaleSvgToFit(svg);
@@ -167,7 +168,7 @@ export class Game extends Base {
 
   #displayLandscapeGenericImage() {
     // Image
-    const container = document.getElementById('landscapce');
+    const container = document.getElementById('symbol');
     const img = this.#loadGenericImage(this.#currentLandscape.Path, container)
     this.#scaleGenericImageToFit(img);
 
