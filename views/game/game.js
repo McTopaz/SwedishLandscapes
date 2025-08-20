@@ -52,8 +52,6 @@ export class Game extends Base {
     this.#ensureViewBox(svg);
     this.#scaleSvgToFit(svg);
 
-    svg.style.width = 128;
-    svg.style.width = 128;
     svg.style.color = this.#yellow;
 
     container.addEventListener('click', (event) => {
