@@ -10,7 +10,7 @@
 }
 
 .mapSection {
-    flex-basis: 75%;
+    flex-basis: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,7 +21,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-basis: 25%;
+    flex-basis: 50%;
     flex-direction: column; 
 }
 
@@ -106,7 +106,26 @@
     border-radius: var(--bigRadious);
     border: var(--innerBorder);
     padding: var(--spacing);
+    width: 15vw;
+    height: 15vw;
 }
+
+.answersGrid {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+    "checkIcon   correctCounter"
+    "crossIcon   incorrectCounter"
+    "sumIcon     sumCounter";
+}
+
+#check          { grid-area: checkIcon; }
+#correctCounter { grid-area: correctCounter; }
+#cross          { grid-area: crossIcon; }
+#incorrectCounter { grid-area: incorrectCounter; }
+#sum            { grid-area: sumIcon; }
+#numberOfItems  { grid-area: sumCounter; }
 
 .header {
     font-size: var(--header);
@@ -187,13 +206,15 @@
 
     .mapSection {
         height: auto;
-        flex-grow: 1; 
+        flex-grow: 1;
+        flex-basis: 85%; 
     }
 
     .menuSection {
         height: auto;
         flex-grow: 0;
         align-items: unset;
+        flex-basis: 15%;
     }
 
     .gridContainer {
