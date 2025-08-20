@@ -77,7 +77,7 @@ export class Game extends Base {
   async #setupAnswerSvg(svgPath, containerName, color) {
     const container = document.getElementById(containerName);
     var svg = await this.#loadSvgInContainer(svgPath, container);
-    this.#styleAnswerSvg(svg, color);
+    svg.style.color = color;
   }
 
   async #loadSvgInContainer(svgPath, container) {
@@ -86,16 +86,6 @@ export class Game extends Base {
     container.innerHTML = svgText.trim();
     const svgElement = container.querySelector('svg');
     return svgElement;
-  }
-
-  #styleAnswerSvg(element, color) {
-    const size = super.getStylePropertyByName("--subTitle");
-    const spacinig = super.getStylePropertyByName("--spacing");
-
-    element.style.width = size;
-    element.style.height = size;
-    element.style.marginRight = spacinig;
-    element.style.color = color;
   }
 
   #setupButtonHandlers() {
