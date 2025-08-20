@@ -124,13 +124,6 @@
     color: black;
 }
 
-.verticalStack {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
-}
-
 #text {
     text-align: center;
     font-size: var(--heading);
