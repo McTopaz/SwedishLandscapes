@@ -46,6 +46,7 @@ export class Menu extends Base {
       const img = document.createElement("div");
       const color = index % 2 === 0 ? this.#swedishYellow : this.#swedishBlue;
       const svg = await this.#loadSvgInContainer(path, img);
+      img.classList.add("categorySVG");
       this.#setupSvg(svg, color);
 
       // Checkbox.
@@ -87,9 +88,9 @@ export class Menu extends Base {
   }
 
   #setupSvg(element, color) {
-    element.style.width = '32px';
-    element.style.height = '32px';
-    element.style.marginRight = '10px';
+    // element.style.width = '4vh';
+    // element.style.height = '4vh';
+    // element.style.marginRight = '10px';
     element.style.color = color;
   }
 
