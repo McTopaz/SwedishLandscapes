@@ -130,8 +130,22 @@ export class Game extends Base {
     this.#scaleSvgToFit(svg);
     
     // Text
-    const text = document.getElementById('text');
-    text.innerText = this.#currentLandscape.Text;
+    this.#showAdditionalSymbolText(this.#currentLandscape.Text);
+  }
+
+  #showAdditionalSymbolText(text)
+  {
+    const element = document.getElementById('text');
+
+    if (text === null || text === undefined || text === "") {
+      element.classList.add('hidden');
+      // element.style.display = 'none';
+    }
+    else {
+      // element.style.display = 'block';
+      element.classList.remove('hidden');
+      element.innerText = text;
+    }
   }
 
   #ensureViewBox(svgElement) {
@@ -161,8 +175,7 @@ export class Game extends Base {
     this.#scaleGenericImageToFit(img);
 
     // Text
-    const text = document.getElementById('text');
-    text.innerText = this.#currentLandscape.Text;
+    this.#showAdditionalSymbolText(this.#currentLandscape.Text);
   }
 
   #loadGenericImage(path, container)
