@@ -205,7 +205,7 @@
         align-items: unset;
         flex-basis: 15%;
     }
-
+    
     .gridContainer {
         height: 100%; 
         grid-template-columns: 1fr 1fr;
@@ -214,8 +214,8 @@
         row-gap: 0.0rem; 
 
         grid-template-areas:
-            "answersHeader   hintHeader"
-            "answersContent  hintContent";
+            "answersHeader hintHeader"
+            "answersContent hintContent";
     }
 
     .box {
@@ -252,19 +252,19 @@
 
     .answersGrid {
         display: grid;
-        grid-template-columns: repeat(6, minmax(0, 1fr));
-        grid-template-rows: 1fr;
         gap: 0.5rem;
         align-items: center;
+        
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: 1fr;
         grid-template-areas: none;
     }
 
-    .answersGrid svg {
-        min-width: 0;
-        max-width: 100%;
+    #check, #cross, #sum {
+        width: auto;
         height: auto;
     }
-
+    
     .header {
         font-size: 12px;
     }
