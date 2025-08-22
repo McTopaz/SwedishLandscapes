@@ -151,6 +151,10 @@
   overflow: hidden;
 }
 
+#symbolContent {
+  width: auto;
+}
+
 #symbol svg {
   max-width: 100%;
   max-height: 100%;
@@ -188,7 +192,8 @@
     .mapSection {
         height: auto;
         flex-grow: 1;
-        flex-basis: 85%; 
+        flex-basis: 85%;
+        position: relative;
     }
 
     .menuSection {
@@ -199,14 +204,30 @@
     }
 
     .gridContainer {
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
         grid-template-rows: auto auto;
         column-gap: 1rem;
         row-gap: 0.0rem; 
 
         grid-template-areas:
-            "symbolHeader   answersHeader   hintHeader"
-            "symbolContent  answersContent  hintContent";
+            "answersHeader   hintHeader"
+            "answersContent  hintContent";
+    }
+
+    #symbolContent {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+    }
+
+    .answersGrid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: 1fr;
+        gap: 0.5rem;
+        align-items: center;
+        grid-template-areas: none;
     }
 
     .box {
