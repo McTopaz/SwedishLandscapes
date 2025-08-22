@@ -28,7 +28,8 @@
   --blue: #6495ed;
 
   /* Buttons */
-  --buttonHeight: 80px;
+  --buttonHeight: 12vh;
+  --buttonCategoryHeight: 4vh;
 }
 
 /* Phone settings */
