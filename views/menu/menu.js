@@ -62,6 +62,7 @@ export class Menu extends Base {
       // Text.
       const text = document.createElement("label");
       text.textContent = category.Title;
+      text.classList.add("categoryText");
 
       // Create category in view.
       div.appendChild(img);
