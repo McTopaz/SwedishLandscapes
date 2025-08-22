@@ -217,30 +217,10 @@
             "answersContent  hintContent";
     }
 
-    #symbolContent {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 10;
-    }
-
-    .answersGrid {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: 1fr;
-        gap: 0.5rem;
-        align-items: center;
-        grid-template-areas: none;
-    }
-
     .box {
         padding: var(--smallSpacing);
-        width: 20vw;
-        aspect-ratio: 1 / 1;
-    }
-
-    .header {
-        font-size: 12px;
+        width: auto;
+        aspect-ratio: unset;
     }
 
     #symbolContent {
@@ -257,6 +237,32 @@
         justify-content: center;
         align-items: center;
         overflow: hidden;
+    }
+
+    #symbolContent {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+    }
+
+    .answersGrid {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        grid-template-rows: 1fr;
+        gap: 0.5rem;
+        align-items: center;
+        grid-template-areas: none;
+    }
+
+    .answersGrid svg {
+        min-width: 0;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .header {
+        font-size: 12px;
     }
 
     #hint {
