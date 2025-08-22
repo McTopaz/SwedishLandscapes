@@ -223,6 +223,16 @@
         aspect-ratio: unset;
     }
 
+    #symbolContent .box {
+        width: 20vw;
+        aspect-ratio: 1 / 1;
+    }
+
+    #answersContent .box {
+        width: auto;
+        aspect-ratio: unset;
+    }
+
     #symbolContent {
         position: absolute;
         top: 0;
