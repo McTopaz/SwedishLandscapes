@@ -39,6 +39,37 @@
     padding: var(--spacing);
 }
 
+.header {
+    font-size: var(--header);
+    font-weight: bold;
+    font-family: var(--font);
+    text-align: center;
+    color: black;
+}
+
+.categorySVG {
+  width: var(--buttonCategoryHeight);
+  height: var(--buttonCategoryHeight);
+  margin-left: var(--bigSpacing);
+  margin-right: var(--bigSpacing);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.categoryCheckbox {
+  width: var(--buttonCategoryHeight);
+  height: var(--buttonCategoryHeight);
+}
+
+.categoryText {
+  font-size: var(--heading);
+  font-family: var(--font);
+  text-align: center;
+  color: black;
+}
+
 .play {
   height: var(--buttonHeight);
   background-color: var(--swedishYellow);
@@ -65,14 +96,15 @@
   color: var(--swedishBlue);  /* Only works due to the <path> element has the fill property set to "currentColor" /> */
 }
 
-/* Phone settings */
-
 @media (max-width: 600px) {
   .play {
-    height: 12vh;
+    height: var(--buttonHeight);
   }
   .playSvg svg {
     height: 100%;
     width: auto;
+  }
+  .header {
+    font-size: var(--subTitle);
   }
 }
