@@ -139,10 +139,8 @@ export class Game extends Base {
 
     if (text === null || text === undefined || text === "") {
       element.classList.add('hidden');
-      // element.style.display = 'none';
     }
     else {
-      // element.style.display = 'block';
       element.classList.remove('hidden');
       element.innerText = text;
     }
