@@ -29,5 +29,6 @@
 
   /* Buttons */
   --buttonHeight: 12vh;
-  --buttonCategoryHeight: 4vh;
+  --categoryCheckboxHeight: 4vh;
+  --categorySvgHeight: 4vh;
 }
