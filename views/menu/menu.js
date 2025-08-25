@@ -52,6 +52,7 @@ export class Menu extends Base {
       // Checkbox.
       const checkbox = document.createElement("input");
       checkbox.type = "checkbox";
+      checkbox.classList.add("categoryCheckbox");
       checkbox.style.marginRight = '10px';
       checkbox.checked = category.IsSelected;
       checkbox.disabled = category.IsDisabled;

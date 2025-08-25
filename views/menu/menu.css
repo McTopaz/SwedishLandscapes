@@ -61,6 +61,7 @@
 .categoryCheckbox {
   width: var(--buttonCategoryHeight);
   height: var(--buttonCategoryHeight);
+  cursor: pointer;
 }
 
 .categoryText {
