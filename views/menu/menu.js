@@ -46,6 +46,7 @@ export class Menu extends Base {
       const img = document.createElement("div");
       const color = index % 2 === 0 ? this.#swedishYellow : this.#swedishBlue;
       const svg = await this.#loadSvgInContainer(path, img);
+      this.#removeSvgViewbox(svg);
       img.classList.add("categorySVG");
       this.#setupSvg(svg, color);
 
@@ -72,6 +73,13 @@ export class Menu extends Base {
       div.appendChild(text);
       container.appendChild(div);
     };
+  }
+
+  #removeSvgViewbox(svgElement) {
+    if (svgElement) {
+      svgElement.removeAttribute("width");
+      svgElement.removeAttribute("height");
+    }
   }
 
   #setupPlaySvgButton() {
