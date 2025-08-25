@@ -31,10 +31,3 @@
   --buttonHeight: 12vh;
   --buttonCategoryHeight: 4vh;
 }
-
-/* Phone settings */
-@media (max-width: 600px) {
-  .title {
-    font-size: 12vw;
-  }
-}
