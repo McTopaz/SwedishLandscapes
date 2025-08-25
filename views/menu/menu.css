@@ -52,6 +52,7 @@
 .categorySVG {
   width: var(--categorySvgHeight);
   height: var(--categorySvgHeight);
+  margin-left: calc(var(--bigSpacing) * 3);
   margin-right: var(--bigSpacing);
   display: flex;
   justify-content: center;
@@ -117,6 +118,7 @@
   .categorySVG {
     width: var(--buttonCategoryHeight);
     height: var(--buttonCategoryHeight);
+    margin-left: 0;
   }
 
   .categoryText {
