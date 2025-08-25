@@ -50,7 +50,6 @@
 .categorySVG {
   width: var(--buttonCategoryHeight);
   height: var(--buttonCategoryHeight);
-  margin-left: var(--bigSpacing);
   margin-right: var(--bigSpacing);
 
   display: flex;
@@ -69,6 +68,7 @@
   font-family: var(--font);
   text-align: center;
   color: black;
+  margin-left: var(--bigSpacing);
 }
 
 .play {
