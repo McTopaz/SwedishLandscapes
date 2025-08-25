@@ -68,7 +68,7 @@
   font-family: var(--font);
   text-align: center;
   color: black;
-  margin-left: var(--bigSpacing);
+  margin-right: var(--bigSpacing);
 }
 
 .play {
@@ -106,6 +106,10 @@
     width: auto;
   }
   .header {
+    font-size: var(--subTitle);
+  }
+
+  .categoryText {
     font-size: var(--subTitle);
   }
 }
