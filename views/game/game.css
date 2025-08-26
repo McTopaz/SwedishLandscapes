@@ -116,7 +116,7 @@
     gap: 0.5rem;
     align-items: center;
     grid-template-columns: auto 1fr;
-    grid-template-rows: 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas:
     "checkIcon   correctCounter"
     "crossIcon   incorrectCounter"
@@ -124,8 +124,8 @@
 }
 
 .answersGrid svg {
-    width: clamp(40px, 4.5vw, 89px);
-    height: clamp(40px, 4.5vw, 89px);
+    width: clamp(40px, 4.5vw, 80rem);
+    height: clamp(40px, 4.5vw, 80rem);
 }
 
 .header {
