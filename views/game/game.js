@@ -163,7 +163,7 @@ export class Game extends Base {
       svgElement.removeAttribute('height');
       svgElement.style.width = '100%';
       svgElement.style.height = '100%';
-      svgElement.style.display = 'block'; // Tar bort inline gap
+      svgElement.style.display = 'block';
   }
 
   #displayLandscapeGenericImage() {
@@ -204,7 +204,6 @@ export class Game extends Base {
   #correrctAnswer(button) {
     game.correctAnswers++;
     this.#updateAnswerCounters();
-    //this.#changeButtonToCorrectSvg(button);
     this.#playSound(`${BASE_PATH}resources/sounds/Correct.wav`);
     onCorrectAnswer();
     this.#updateLandscapeIndicator(button);
