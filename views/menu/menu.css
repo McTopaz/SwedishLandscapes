@@ -66,8 +66,8 @@
 }
 
 .categoryCheckbox {
-  width: var(--categoryCheckboxHeight);
-  height: var(--categoryCheckboxHeight);
+  width: var(--categoryCheckboxSize);
+  height: var(--categoryCheckboxSize);
   margin-right: 10px;
   cursor: pointer;
 }
