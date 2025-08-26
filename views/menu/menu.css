@@ -52,14 +52,14 @@
 .category {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: var(--spacingSmall);
 }
 
 .categorySVG {
   width: var(--categorySvgSize);
   height: var(--categorySvgSize);
-  margin-left: calc(var(--bigSpacing) * 3);
-  margin-right: var(--bigSpacing);
+  margin-left: calc(var(--spacingSmall) * 3);
+  margin-right: var(--spacingSmall);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -68,7 +68,7 @@
 .categoryCheckbox {
   width: var(--categoryCheckboxSize);
   height: var(--categoryCheckboxSize);
-  margin-right: 10px;
+  margin-right: var(--spacingSmall);
   cursor: pointer;
 }
 
@@ -77,7 +77,6 @@
   font-family: var(--font);
   text-align: center;
   color: black;
-  margin-right: var(--bigSpacing);
 }
 
 .play {
@@ -119,7 +118,7 @@
 
 @media (max-width: 600px) {
   .category {
-margin-bottom: 0;
+    margin-bottom: 0;
   }
 
   .playSvg svg {
