@@ -9,7 +9,6 @@ export class Menu extends Base {
 
   #swedishBlue = "";
   #swedishYellow = "";
-  #grey = "";
 
   init() {
     super.init();
@@ -25,7 +24,6 @@ export class Menu extends Base {
   #loadColors() {
     this.#swedishBlue = super.getStylePropertyByName('--swedishBlue').trim();
     this.#swedishYellow = super.getStylePropertyByName('--swedishYellow').trim();
-    this.#grey = super.getStylePropertyByName("--grey");
   }
 
   async #displayCategories() {
