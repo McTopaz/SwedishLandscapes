@@ -106,21 +106,17 @@ export class Menu extends Base {
       : this.#disablePlayButton();
   }
 
-  #enablePlayButton() {
+#enablePlayButton() {
     const playButton = document.getElementById("play");
-    const color = this.#swedishYellow;
-    playButton.disabled = false;
-    playButton.style.backgroundColor = color;
-    playButton.style.cursor = 'pointer';
-  }
+    playButton.classList.add('enabled');
+    playButton.classList.remove('disabled');
+}
 
-  #disablePlayButton() {
+#disablePlayButton() {
     const playButton = document.getElementById("play");
-    const color = this.#grey;
-    playButton.disabled = true;
-    playButton.style.backgroundColor = color;
-    playButton.style.cursor = 'not-allowed';
-  }
+    playButton.classList.add('disabled');
+    playButton.classList.remove('enabled');
+}
 
   #playClicked() {
     resetCounters();
