@@ -99,6 +99,8 @@
 }
 
 .box {
+    width: 20vw;
+    aspect-ratio: 1 / 1; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -107,8 +109,6 @@
     border-radius: var(--bigRadious);
     border: var(--innerBorder);
     padding: var(--spacing);
-    width: 10vw;
-    aspect-ratio: 1 / 1; 
 }
 
 .answersGrid {
@@ -145,18 +145,18 @@
     display: none;
 }
 
+#symbolContent {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+}
+
 #symbol {
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
   flex-grow: 1;
-}
-
-#symbolContent {
-  display: flex;
-  flex-direction: column;
-  width: auto;
 }
 
 #symbol svg {
