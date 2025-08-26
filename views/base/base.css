@@ -10,11 +10,11 @@ html, body {
 
 .borderBox {
   position: absolute;
-  top: var(--spacing);
-  left: var(--spacing);
-  right: var(--spacing);
-  bottom: var(--spacing);
-  padding: var(--spacing);
+  top: var(--spacingTiny);
+  left: var(--spacingTiny);
+  right: var(--spacingTiny);
+  bottom: var(--spacingTiny);
+  padding: var(--spacingTiny);
 
   display: flex;
   flex-direction: column;
