@@ -35,12 +35,6 @@ export class Menu extends Base {
     for (let index = 0; index < game.categories.length; index++) {
       const category = game.categories[index];
 
-      // Main div.
-      const div = document.createElement("div");
-      div.style.display = 'flex';
-      div.style.alignItems = 'center';
-      div.style.marginBottom = '10px';
-
       // SVG.
       const path = category.IconPath;
       const img = document.createElement("div");
@@ -62,13 +56,14 @@ export class Menu extends Base {
       const text = document.createElement("label");
       text.textContent = category.Title;
       text.classList.add("categoryText");
-
-      this.#handleCategoryClick(category, div, checkbox);
-
-      // Create category in view.
+      
+      // Create category in view in parent.
+      const div = document.createElement("div");
+      div.classList.add("category");
       div.appendChild(img);
       div.appendChild(checkbox);
       div.appendChild(text);
+      this.#handleCategoryClick(category, div, checkbox);
       container.appendChild(div);
     };
   }
