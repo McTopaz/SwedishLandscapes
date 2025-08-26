@@ -13,6 +13,12 @@
   --bigRadious: 12px;
 
   /* Texts */
+  
+  --fontSmall: clamp(0.9rem, 1vw, 10rem);
+  --fontMedium: clamp(1.1rem, 2vw, 20rem);
+  --fontLarge: clamp(1.3rem, 3vw, 30rem);
+  --fontXL: clamp(1.9rem, 5vw, 40rem);
+
   --title: 8vw;
   --subTitle: 4vw;
   --header: 2vw;
