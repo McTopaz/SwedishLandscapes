@@ -175,6 +175,11 @@
 }
 
 .hint {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-grow: 1;
     cursor: pointer;
 }
 
