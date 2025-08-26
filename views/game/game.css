@@ -129,7 +129,7 @@
 }
 
 .header {
-    font-size: var(--header);
+    font-size: var(--fontMedium);
     font-weight: bold;
     font-family: var(--font);
     text-align: center;
@@ -166,7 +166,7 @@
 }
 
 .counter {
-    font-size: var(--heading);
+    font-size: var(--fontMedium);
     font-weight: bold;
     font-family: var(--font);
     text-align: center;
@@ -265,9 +265,9 @@
         height: 10vw;
     }
     
-    .header {
+    /* .header {
         font-size: 12px;
-    }
+    } */
 
     #hint {
         width: 20vw;
