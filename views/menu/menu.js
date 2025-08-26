@@ -57,15 +57,13 @@ export class Menu extends Base {
       checkbox.style.marginRight = '10px';
       checkbox.checked = category.IsSelected;
       checkbox.disabled = category.IsDisabled;
-      checkbox.addEventListener("change", () => {
-        category.IsSelected = checkbox.checked;
-        this.#checkForNoCategorySelected();
-      });
 
       // Text.
       const text = document.createElement("label");
       text.textContent = category.Title;
       text.classList.add("categoryText");
+
+      this.#handleCategoryClick(category, div, checkbox);
 
       // Create category in view.
       div.appendChild(img);
@@ -80,6 +78,14 @@ export class Menu extends Base {
       svgElement.removeAttribute("width");
       svgElement.removeAttribute("height");
     }
+  }
+
+  #handleCategoryClick(category, div, checkbox) {
+    div.addEventListener("click", () => {
+      category.IsSelected = !category.IsSelected;
+      checkbox.checked = category.IsSelected;
+      this.#checkForNoCategorySelected();
+    });
   }
 
   #setupPlaySvgButton() {
