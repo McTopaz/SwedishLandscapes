@@ -3,6 +3,7 @@
   --spacing: 12px;
   --smallSpacing: 6px;
   --bigSpacing: 18px;
+  --spacingSmall: clamp(0.5rem, 4vw, 3rem);
 
   /* Border */
   --outerBorder: 5px solid black;
