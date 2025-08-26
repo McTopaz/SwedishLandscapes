@@ -3,6 +3,7 @@
   --spacing: 12px;
   --smallSpacing: 6px;
   --bigSpacing: 18px;
+  --spacingTiny: clamp(0.3rem, 2vw, 1rem);
   --spacingSmall: clamp(0.5rem, 4vw, 3rem);
 
   /* Border */
