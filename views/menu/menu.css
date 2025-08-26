@@ -118,6 +118,10 @@
 }
 
 @media (max-width: 600px) {
+  .category {
+margin-bottom: 0;
+  }
+
   .playSvg svg {
       height: 100%;
       width: auto;
