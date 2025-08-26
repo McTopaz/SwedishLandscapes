@@ -49,6 +49,12 @@
   color: black;
 }
 
+.category {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
 .categorySVG {
   width: var(--categorySvgHeight);
   height: var(--categorySvgHeight);
