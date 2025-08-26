@@ -107,20 +107,17 @@
   color: var(--swedishBlue);    /* Only works due to the <path> element has the fill property set to "currentColor" /> */
 }
 
-.play.enabled {
+.play:enabled {
     background-color: var(--swedishYellow);
     cursor: pointer;
 }
 
-.play.disabled {
+.play:disabled {
     background-color: var(--grey);
     cursor: not-allowed;
 }
 
 @media (max-width: 600px) {
-  :root {
-    --buttonCategoryHeight: 8vh;
-  }
   .playSvg svg {
       height: 100%;
       width: auto;
