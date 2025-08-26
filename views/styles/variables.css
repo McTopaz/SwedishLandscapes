@@ -37,5 +37,5 @@
   /* Buttons */
   --buttonHeight: 12vh;
   --categoryCheckboxSize: clamp(1rem, 5vh, 9rem);
-  --categorySvgHeight: 4vh;
+  --categorySvgSize: 4vh;
 }

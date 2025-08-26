@@ -56,8 +56,8 @@
 }
 
 .categorySVG {
-  width: var(--categorySvgHeight);
-  height: var(--categorySvgHeight);
+  width: var(--categorySvgSize);
+  height: var(--categorySvgSize);
   margin-left: calc(var(--bigSpacing) * 3);
   margin-right: var(--bigSpacing);
   display: flex;
