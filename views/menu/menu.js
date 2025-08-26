@@ -42,7 +42,7 @@ export class Menu extends Base {
       const svg = await this.#loadSvgInContainer(path, img);
       this.#removeSvgViewbox(svg);
       img.classList.add("categorySVG");
-      this.#setupSvg(svg, color);
+      svg.style.color = color;
 
       // Checkbox.
       const checkbox = document.createElement("input");
@@ -94,13 +94,6 @@ export class Menu extends Base {
     container.innerHTML = svgText.trim();
     const svgElement = container.querySelector('svg');
     return svgElement;
-  }
-
-  #setupSvg(element, color) {
-    // element.style.width = '4vh';
-    // element.style.height = '4vh';
-    // element.style.marginRight = '10px';
-    element.style.color = color;
   }
 
   #checkForNoCategorySelected() {
