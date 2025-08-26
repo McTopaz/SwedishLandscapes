@@ -11,7 +11,7 @@
 }
 
 .title {
-  font-size: var(--title);
+  font-size: var(--fontXL);
   font-weight: bold;
   font-family: var(--font);
   text-align: center;
@@ -19,7 +19,7 @@
 }
 
 .subTitle {
-  font-size: var(--subTitle);
+  font-size: var(--fontLarge);
   font-weight: bold;
   font-family: var(--font);
   text-align: center;
@@ -42,7 +42,7 @@
 }
 
 .header {
-  font-size: var(--header);
+  font-size: var(--fontMedium);
   font-weight: bold;
   font-family: var(--font);
   text-align: center;
@@ -66,7 +66,7 @@
 }
 
 .categoryText {
-  font-size: var(--heading);
+  font-size: var(--fontSmall);
   font-family: var(--font);
   text-align: center;
   color: black;
@@ -104,24 +104,12 @@
   :root {
     --buttonCategoryHeight: 8vh;
   }
-  .play {
-      height: var(--buttonHeight);
-  }
   .playSvg svg {
       height: 100%;
       width: auto;
   }
-  .header {
-      font-size: var(--subTitle);
-  }
 
   .categorySVG {
-    width: var(--buttonCategoryHeight);
-    height: var(--buttonCategoryHeight);
     margin-left: 0;
-  }
-
-  .categoryText {
-      font-size: var(--subTitle);
   }
 }
