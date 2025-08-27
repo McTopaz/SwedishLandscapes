@@ -37,7 +37,7 @@
   --blue: #6495ed;
 
   /* Buttons */
-  --buttonHeight: 12vh;
+  --buttonHeight: clamp(3rem, 12vh, 18rem);;
   --categoryCheckboxSize: clamp(1rem, 5vh, 9rem);
-  --categorySvgSize: 4vh;
+  --categorySvgSize: clamp(2rem, 7vh, 10rem);
 }
