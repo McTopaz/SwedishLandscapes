@@ -3,8 +3,8 @@
   --spacing: 12px;
   --smallSpacing: 6px;
   --bigSpacing: 18px;
-  --spacingTiny: clamp(0.3rem, 5.62rem, 1rem);
-  --spacingSmall: clamp(0.5rem, 11.24rem, 3rem);
+  --spacingTiny: clamp(0.3rem, 1.405rem, 1rem);
+  --spacingSmall: clamp(0.5rem, 2.81rem, 3rem);
 
   /* Border */
   --outerBorder: 5px solid black;
@@ -15,11 +15,11 @@
   --bigRadious: 12px;
 
   /* Texts */
-  --fontTiny: clamp(0.7rem, 2.81rem, 4rem);
-  --fontSmall: clamp(0.9rem, 5.62rem, 6rem);
-  --fontMedium: clamp(1.1rem, 11.24rem, 8rem);
-  --fontLarge: clamp(1.3rem, 16.85rem, 15rem);
-  --fontXL: clamp(1.9rem, 22.48rem, 100rem);
+  --fontTiny: clamp(0.7rem, 0.7025rem, 4rem);
+  --fontSmall: clamp(0.9rem, 1.405rem, 6rem);
+  --fontMedium: clamp(1.1rem, 2.81rem, 8rem);
+  --fontLarge: clamp(1.3rem, 4.215rem, 15rem);
+  --fontXL: clamp(1.9rem, 5.62rem, 100rem);
 
   --title: 8vw;
   --subTitle: 4vw;
@@ -36,7 +36,7 @@
   --blue: #6495ed;
 
   /* Buttons */
-  --buttonHeight: clamp(3rem, 23.73rem, 18rem);;
-  --categoryCheckboxSize: clamp(1rem, 9.8875rem, 9rem);
-  --categorySvgSize: clamp(2rem, 13.8425rem, 10rem);
+  --buttonHeight: clamp(3rem, 5.9325rem, 18rem);;
+  --categoryCheckboxSize: clamp(1rem, 2.471875rem, 9rem);
+  --categorySvgSize: clamp(2rem, 3.460625rem, 10rem);
 }
