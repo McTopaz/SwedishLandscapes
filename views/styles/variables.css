@@ -3,8 +3,8 @@
   --spacing: 12px;
   --smallSpacing: 6px;
   --bigSpacing: 18px;
-  --spacingTiny: clamp(0.5rem, 1vw, 2rem);
-  --spacingSmall: clamp(1rem, 3vw, 7rem);
+  --spacingTiny: clamp(0.5rem, 1.5vw, 1rem);
+  --spacingSmall: clamp(1rem, 4vw, 2.5rem);
 
   /* Border */
   --outerBorder: 5px solid black;
@@ -15,11 +15,11 @@
   --bigRadious: 12px;
 
   /* Texts */
-  --fontTiny: clamp(0.6rem, 1vw, 2rem);
-  --fontSmall: clamp(0.8rem, 2vw, 4rem);
-  --fontMedium: clamp(1.0rem, 3vw, 7rem);
-  --fontLarge: clamp(1.2rem, 4vw, 9rem);
-  --fontXL: clamp(1.8rem, 6vw, 14rem);
+  --fontTiny: clamp(0.6rem, 2vw, 1.2rem);
+  --fontSmall: clamp(0.8rem, 3vw, 2rem);
+  --fontMedium: clamp(1.0rem, 4vw, 3rem);
+  --fontLarge: clamp(1.2rem, 5vw, 4rem);
+  --fontXL: clamp(1.8rem, 7vw, 6rem);
 
   --title: 8vw;
   --subTitle: 4vw;
@@ -36,7 +36,7 @@
   --blue: #6495ed;
 
   /* Buttons */
-  --buttonHeight: clamp(5rem, 9vw, 20rem);
-  --categoryCheckboxSize: clamp(1rem, 2vw, 4rem);
-  --categorySvgSize: clamp(2rem, 4vw, 8rem);
+  --buttonHeight: clamp(5rem, 10vw, 8rem);
+  --categoryCheckboxSize: clamp(1rem, 3vw, 2rem);
+  --categorySvgSize: clamp(2rem, 5vw, 4rem);
 }
