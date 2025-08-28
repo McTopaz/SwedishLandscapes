@@ -40,3 +40,39 @@
   --categoryCheckboxSize: clamp(1rem, 3vw, 2rem);
   --categorySvgSize: clamp(2rem, 5vw, 4rem);
 }
+
+/* Desktops */
+@media (min-width: 1920px) {
+  :root {
+    --spacingTiny: clamp(0.33rem, 0.8vw, 0.67rem);
+    --spacingSmall: clamp(0.67rem, 2.13vw, 1.67rem);
+
+    --fontTiny: clamp(0.4rem, 1.07vw, 0.8rem);
+    --fontSmall: clamp(0.53rem, 1.6vw, 1.33rem);
+    --fontMedium: clamp(0.67rem, 2.13vw, 2rem);
+    --fontLarge: clamp(0.8rem, 2.67vw, 2.67rem);
+    --fontXL: clamp(1.2rem, 3.73vw, 4rem);
+    
+    --buttonHeight: clamp(3.33rem, 5.33vw, 5.33rem);
+    --categoryCheckboxSize: clamp(0.67rem, 1.6vw, 1.33rem);
+    --categorySvgSize: clamp(1.33rem, 2.67vw, 2.67rem);
+  }
+}
+
+/* TVs */
+@media (min-width: 3840px) {
+  :root {
+    --spacingTiny: clamp(0.41rem, 0.81vw, 1.62rem);
+    --spacingSmall: clamp(0.81rem, 2.43vw, 5.67rem);
+
+    --fontTiny: clamp(0.49rem, 0.81vw, 1.62rem);
+    --fontSmall: clamp(0.65rem, 1.62vw, 3.24rem);
+    --fontMedium: clamp(0.81rem, 2.43vw, 5.67rem);
+    --fontLarge: clamp(0.97rem, 3.24vw, 7.29rem);
+    --fontXL: clamp(1.46rem, 4.86vw, 11.34rem);
+    
+    --buttonHeight: clamp(4.05rem, 7.29vw, 16.2rem);
+    --categoryCheckboxSize: clamp(0.81rem, 1.62vw, 3.24rem);
+    --categorySvgSize: clamp(1.62rem, 3.24vw, 6.48rem);
+  }
+}
