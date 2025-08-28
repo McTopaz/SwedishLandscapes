@@ -117,7 +117,6 @@ export class Menu extends Base {
 }
 
   #playClicked() {
-    window.alert(window.innerWidth + "x" + window.innerHeight);
     resetCounters();
     prepareGame();
     runGame();
