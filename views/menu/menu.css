@@ -49,6 +49,15 @@
   color: black;
 }
 
+.spacer {
+    min-height: var(--spacingSmall);
+}
+
+.categories {
+  overflow-y: auto;
+  max-height: clamp(17rem, 30vh, 49rem);
+}
+
 .category {
   display: flex;
   align-items: center;
