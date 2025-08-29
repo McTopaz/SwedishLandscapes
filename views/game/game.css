@@ -19,75 +19,11 @@
     grid-area: menuSection;
 }
 
-@media (min-width: 1920px) {
-
-    #symbolContent {
-        grid-column: 2;
-    }
-    
-    .map-container {
-        grid-column: 4;
-    }
-
-    .map-container, .menuSection {
-        height: auto;
-    }
-    
-    .menuSection .gridContainer {
-        display: grid;
-        height: auto;
-        width: auto;
-        gap: 2rem;
-        grid-template-columns: auto; 
-        grid-template-rows: auto auto auto auto; 
-        grid-template-areas:
-            "answersHeader"
-            "answersContent"
-            "hintHeader"
-            "hintContent";
-        justify-content: center;
-        align-items: center;
-    }
-
-    #answersHeader { 
-        grid-area: answersHeader; 
-        display: block; /* Se till att headern syns */
-    }
-
-    #answersContent { 
-        grid-area: answersContent; 
-        display: block; /* Se till att innehållet syns */
-    }
-
-    #hintHeader { 
-        grid-area: hintHeader; 
-        display: block; /* Se till att headern syns */
-    }
-
-    #hintContent { 
-        grid-area: hintContent; 
-        grid-area: hintContent; 
-        display: block; /* Se till att innehållet syns */
-    }
-
-    .box {
-        width: 15vw; /* Mindre boxar för desktop-läget */
-        aspect-ratio: 1 / 1; 
-    }
-}
-
 .map-container {
     position: relative;
     width: auto;
     margin-left: auto;
     overflow: hidden;
-}
-
-.map {
-    display: block;
-    height: 100%;
-    width: auto;
-    object-fit: contain;
 }
 
 .map-btn {
@@ -229,6 +165,64 @@
     height: auto;
 }
 
+@media (min-width: 1920px) {
+
+    #symbolContent {
+        grid-column: 2;
+    }
+    
+    .map-container {
+        grid-column: 4;
+    }
+
+    .map-container, .menuSection {
+        height: auto;
+    }
+    
+    .menuSection .gridContainer {
+        display: grid;
+        height: auto;
+        width: auto;
+        gap: 2rem;
+        grid-template-columns: auto; 
+        grid-template-rows: auto auto auto auto; 
+        grid-template-areas:
+            "answersHeader"
+            "answersContent"
+            "hintHeader"
+            "hintContent";
+        justify-content: center;
+        align-items: center;
+    }
+
+    #answersHeader { 
+        grid-area: answersHeader; 
+        display: block;
+    }
+
+    #answersContent { 
+        grid-area: answersContent; 
+        display: block;
+    }
+
+    #hintHeader { 
+        grid-area: hintHeader; 
+        display: block;
+    }
+
+    #hintContent { 
+        grid-area: hintContent; 
+        grid-area: hintContent; 
+        display: block;
+    }
+
+    .box {
+        width: 15vw;
+        aspect-ratio: 1 / 1; 
+    }
+}
+
+
 @media (max-width: 600px) {
     .container {
         display: flex;
@@ -242,6 +236,13 @@
         flex-grow: 0;
         align-items: unset;
         flex-basis: 15%;
+    }
+
+    .map {
+        display: block;
+        height: 100%;
+        width: auto;
+        object-fit: contain;
     }
 
     .map-btn {
