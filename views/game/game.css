@@ -32,14 +32,6 @@
     .map-container, .menuSection {
         height: auto;
     }
-
-    .menuSection {
-        grid-column: 6;
-        height: auto;
-        display: grid;
-        align-items: center;
-        justify-content: center;
-    }
     
     .menuSection .gridContainer {
         display: grid;
