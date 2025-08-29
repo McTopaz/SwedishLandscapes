@@ -7,18 +7,6 @@
     align-items: center;
 }
 
-#symbolContent {
-    grid-area: symbolContent;
-}
-
-.map-container {
-    grid-area: mapContainer;
-}
-
-.menuSection {
-    grid-area: menuSection;
-}
-
 .map-container {
     position: relative;
     width: auto;
@@ -168,15 +156,17 @@
 @media (min-width: 1920px) {
 
     #symbolContent {
+        grid-area: symbolContent;
         grid-column: 2;
     }
-    
+
     .map-container {
+        grid-area: mapContainer;
         grid-column: 4;
     }
 
-    .map-container, .menuSection {
-        height: auto;
+    .menuSection {
+        grid-area: menuSection;
     }
     
     .menuSection .gridContainer {
