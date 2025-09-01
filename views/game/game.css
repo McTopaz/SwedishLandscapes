@@ -4,8 +4,8 @@
 
 .map-btn {
     position: absolute;
-    width: clamp(48px, 3vw, 75px);
-    height: clamp(48px, 3vw, 75px);
+    width: var(--mapButtonSize);
+    height: var(--mapButtonSize);
     cursor: pointer;
     background-image: url('../../resources/images/svg/LandscapePin.svg');
     background-size: contain;
