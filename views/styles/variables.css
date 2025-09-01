@@ -39,6 +39,7 @@
   --buttonHeight: clamp(5rem, 10vw, 8rem);
   --categoryCheckboxSize: clamp(1rem, 3vw, 2rem);
   --categorySvgSize: clamp(2rem, 5vw, 4rem);
+  --mapButtonSize: clamp(0.9rem, 1vw, 10rem);
 }
 
 /* Desktops */
@@ -56,6 +57,7 @@
     --buttonHeight: clamp(3.33rem, 5.33vw, 5.33rem);
     --categoryCheckboxSize: clamp(0.67rem, 1.6vw, 1.33rem);
     --categorySvgSize: clamp(1.33rem, 2.67vw, 2.67rem);
+    --mapButtonSize: clamp(0.9rem, 4vw, 10rem);
   }
 }
 
@@ -74,5 +76,6 @@
     --buttonHeight: clamp(4.05rem, 7.29vw, 16.2rem);
     --categoryCheckboxSize: clamp(0.81rem, 1.62vw, 3.24rem);
     --categorySvgSize: clamp(1.62rem, 3.24vw, 6.48rem);
+    --mapButtonSize: clamp(0.9rem, 15vw, 10rem);
   }
 }
