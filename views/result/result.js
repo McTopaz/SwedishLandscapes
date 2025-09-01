@@ -34,23 +34,12 @@ export class Result extends Base {
     document.getElementById("numberOfItems").innerText = game.numberOfItems;
   }
 
-    async #setupAnswerSvg(svgPath, containerName, color) {
+  async #setupAnswerSvg(svgPath, containerName, color) {
     const container = document.getElementById(containerName);
     var svg = await this.#loadSvgInContainer(svgPath, container);
-    this.#styleAnswerSvg(svg, color);
   }
 
-  #styleAnswerSvg(element, color) {
-    const size = super.getStylePropertyByName("--title");
-    const spacinig = super.getStylePropertyByName("--spacing");
-
-    element.style.width = size;
-    element.style.height = size;
-    element.style.marginRight = spacinig;
-    element.style.color = color;
-  }
-
-    #setupHomeSvgButton() {
+  #setupHomeSvgButton() {
     const svg =  `${BASE_PATH}resources/images/svg/Home.svg`;
     const container = document.getElementById('svgHome');
     this.#loadSvgInContainer(svg, container);
