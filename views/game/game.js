@@ -124,10 +124,10 @@ export class Game extends Base {
   async #displayLandscapeSvg() {
     // SVG
     const container = document.getElementById('symbol');
-    console.log(container);
     const svg = await this.#loadSvgInContainer(this.#currentLandscape.Path, container);
     this.#ensureViewBox(svg);
-    this.#scaleSvgToFit(svg);
+    this.#unlockSvgSizing(svg);
+    svg.classList.add('symbol-svg');
     
     // Text
     this.#showAdditionalSymbolText(this.#currentLandscape.Text);
@@ -146,16 +146,31 @@ export class Game extends Base {
     }
   }
 
-  #ensureViewBox(svgElement) {
-      if (!svgElement.hasAttribute('viewBox')) {
-          const width = parseFloat(svgElement.getAttribute('width')) || 100;
-          const height = parseFloat(svgElement.getAttribute('height')) || 100;
-          this.#addViewBox(svgElement, width, height);
-      }
+  #ensureViewBox(svg) {
+    if (!svg.hasAttribute('viewBox')) {
+        const width = parseFloat(svg.getAttribute('width')) || 100;
+        const height = parseFloat(svg.getAttribute('height')) || 100;
+        this.#addViewBox(svg, width, height);
+    }
   }
 
-  #addViewBox(svgElement, width, height) {
-      svgElement.setAttribute('viewBox', `0 0 ${width} ${height}`);
+  #addViewBox(svg, width, height) {
+      svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+  }
+
+  #unlockSvgSizing(svg) {
+    if (svg) {
+      svg.removeAttribute("width");
+      svg.removeAttribute("height");
+      svg.style.width = '';
+      svg.style.height = '';
+
+      if (!svg.hasAttribute('preserveAspectRatio')) {
+        svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+      }
+
+      svg.style.display = 'block';
+    }
   }
 
   #scaleSvgToFit(svgElement) {

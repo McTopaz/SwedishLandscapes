@@ -72,6 +72,14 @@
     padding: var(--spacing);
 }
 
+.symbol-svg
+{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+}
+
 .answersGrid {
     display: grid;
     gap: 0.5rem;
@@ -155,6 +163,21 @@
     #symbolContent {
         grid-column: 2;
         grid-row: 1;
+    }
+
+    #symbol {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #symbol .symbol-svg {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: contain;
     }
 
     .map-container {
