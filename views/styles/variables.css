@@ -20,11 +20,6 @@
   --fontMedium: clamp(1.0rem, 4vw, 3rem);
   --fontLarge: clamp(1.2rem, 5vw, 4rem);
   --fontXL: clamp(1.8rem, 7vw, 6rem);
-
-  --title: 8vw;
-  --subTitle: 4vw;
-  --header: 2vw;
-  --heading: 1vw;
   --font: 'Swedish Sans', sans-serif;
 
   /* Colors */

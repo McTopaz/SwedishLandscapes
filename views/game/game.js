@@ -10,7 +10,6 @@ export class Game extends Base {
   #numberOfCategories = game.categories.filter(c => c.IsSelected).length;
 
   #currentLandscape = null;
-  #green = super.getStylePropertyByName("--green");
   #yellow = super.getStylePropertyByName("--swedishYellow");
 
   init() {
