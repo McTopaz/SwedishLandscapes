@@ -40,6 +40,7 @@
   --categoryCheckboxSize: clamp(1rem, 3vw, 2rem);
   --categorySvgSize: clamp(2rem, 5vw, 4rem);
   --mapButtonSize: clamp(0.9rem, 1vw, 10rem);
+  --answersSvgSize: clamp(2rem, 2vw, 80rem);
 }
 
 /* Desktops */
@@ -58,6 +59,7 @@
     --categoryCheckboxSize: clamp(0.67rem, 1.6vw, 1.33rem);
     --categorySvgSize: clamp(1.33rem, 2.67vw, 2.67rem);
     --mapButtonSize: clamp(0.9rem, 4vw, 10rem);
+    --answersSvgSize: clamp(40px, 10vw, 180rem);
   }
 }
 
@@ -77,5 +79,6 @@
     --categoryCheckboxSize: clamp(0.81rem, 1.62vw, 3.24rem);
     --categorySvgSize: clamp(1.62rem, 3.24vw, 6.48rem);
     --mapButtonSize: clamp(0.9rem, 15vw, 10rem);
+    --answersSvgSize: clamp(40px, 10vw, 80rem);
   }
 }
