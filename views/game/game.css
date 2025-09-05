@@ -1,78 +1,39 @@
-.container {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 100%;
-}
-
-.mapSection , .menuSection {
-  width: 100%;
-}
-
-.mapSection {
-    flex-grow: 1;
-    flex-basis: 0;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;;
-    overflow: hidden;
-}
-
-.menuSection {
-    display: flex;
-    flex-grow: 1;
-    flex-basis: 0;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column; 
-}
-
 .map-container {
     position: relative;
-    height: 100%;
-    width: auto;
-    margin-left: auto;
-}
-
-.map {
-    display: block;
-    height: 100%;
-    width: auto;
-    object-fit: contain;
 }
 
 .map-btn {
     position: absolute;
-    width: clamp(48px, 3vw, 75px);
-    height: clamp(48px, 3vw, 75px);
+    width: var(--mapButtonSize);
+    height: var(--mapButtonSize);
     cursor: pointer;
     background-image: url('../../resources/images/svg/LandscapePin.svg');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     
-    display: flex;
-    align-items: flex-end;
+    display: grid;
+    align-items: end;
     justify-content: center;
 }
 
 .status-bar-container {
     width: 80%;
     height: 8px;
-    margin-bottom: -2px;    
-    display: flex;
+    margin-bottom: -2px;
+    display: grid;
     border-radius: var(--bigRadious);
     overflow: hidden;
 }
 
 .bar-part {
-  height: 100%;
-  background-color: #ccc;
-  border-left: 1px solid #fff;
+    height: 100%;
+    background-color: #ccc;
+    border-left: 1px solid #fff;
 }
 
 .bar-part.correct {
-  background-color: var(--green);
+    background-color: var(--green);
 }
 
 .gridContainer {
@@ -80,20 +41,20 @@
     row-gap: 1rem;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
-        "symbolHeader   symbolContent"
-        "answersHeader  answersContent"
-        "hintHeader     hintContent";
+        "symbolHeader   symbolContent"
+        "answersHeader  answersContent"
+        "hintHeader     hintContent";
 }
 
-#symbolHeader   { grid-area: symbolHeader; }
-#answersHeader  { grid-area: answersHeader; }
-#hintHeader     { grid-area: hintHeader; }
-#symbolContent  { grid-area: symbolContent; }
+#symbolHeader   { grid-area: symbolHeader; }
+#answersHeader  { grid-area: answersHeader; }
+#hintHeader     { grid-area: hintHeader; }
+#symbolContent  { grid-area: symbolContent; }
 #answersContent { grid-area: answersContent; }
-#hintContent    { grid-area: hintContent; }
+#hintContent    { grid-area: hintContent; }
 
 .gridItem {
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
 }
@@ -101,7 +62,7 @@
 .box {
     width: 20vw;
     aspect-ratio: 1 / 1; 
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -111,6 +72,14 @@
     padding: var(--spacing);
 }
 
+.symbol-svg
+{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+}
+
 .answersGrid {
     display: grid;
     gap: 0.5rem;
@@ -118,9 +87,9 @@
     grid-template-columns: auto 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas:
-    "checkIcon   correctCounter"
-    "crossIcon   incorrectCounter"
-    "sumIcon     sumCounter";
+    "checkIcon   correctCounter"
+    "crossIcon   incorrectCounter"
+    "sumIcon     sumCounter";
 }
 
 .answersGrid svg {
@@ -146,17 +115,16 @@
 }
 
 #symbolContent {
-  display: flex;
-  flex-direction: column;
-  width: auto;
+    display: grid;
+    flex-direction: column;
+    width: auto;
 }
 
 #symbol {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  flex-grow: 1;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
 .counter {
@@ -167,35 +135,124 @@
     color: black;
 }
 
-.hint {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    flex-grow: 1;
-    cursor: pointer;
+@media (min-width: 1920px) {
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        align-items: center;
+    }
+
+    #symbolContent {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    #symbolContent .box {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 25vw;
+        aspect-ratio: 1 / 1;
+    }
+
+    #symbol {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #symbol .symbol-svg {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: contain;
+    }
+
+    .map-container {
+        grid-column: 4;
+        grid-row: 1;
+        position: relative;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .map {
+        height: 100%;
+        width: auto;
+        max-width: 100%;
+        object-fit: contain;
+        display: block;
+    }
+
+    .menuSection {
+        grid-column: 6;
+        grid-row: 1;
+    }
+    
+    .gridContainer {
+        grid-template-columns: auto; 
+        grid-template-rows: auto auto auto auto; 
+        grid-template-areas:
+            "answersHeader"
+            "answersContent"
+            "hintHeader"
+            "hintContent";
+        justify-content: center;
+        align-items: center;
+    }
+
+    #answersHeader { 
+        grid-area: answersHeader; 
+        display: block;
+    }
+
+    #answersContent { 
+        grid-area: answersContent; 
+        display: block;
+    }
+
+    #hintHeader { 
+        grid-area: hintHeader; 
+        display: block;
+    }
+
+    #hintContent { 
+        grid-area: hintContent; 
+        grid-area: hintContent; 
+        display: block;
+    }
+
+    .box {
+        width: 15vw;
+        aspect-ratio: 1 / 1; 
+    }
+
+    #hint {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
-#hint svg {
-    max-width: 100%;
-    height: auto;
-}
 
 @media (max-width: 600px) {
     .container {
+        display: flex;
         flex-direction: column;
-    }
-
-    .mapSection, .menuSection {
         width: 100%;
-        height: auto;
-    }
-
-    .mapSection {
-        height: auto;
-        flex-grow: 1;
-        flex-basis: 85%;
-        position: relative;
+        height: 100%;
     }
 
     .menuSection {
@@ -204,6 +261,24 @@
         align-items: unset;
         flex-basis: 15%;
     }
+
+    .map-container {
+        width: auto;
+        margin-left: auto;
+        overflow: hidden;
+    }
+
+    .map {
+        display: block;
+        height: 100%;
+        width: auto;
+        object-fit: contain;
+    }
+
+    .map-btn {
+        width: clamp(48px, 3vw, 75px);
+        height: clamp(48px, 3vw, 75px);
+    }
     
     .gridContainer {
         height: 100%; 
@@ -211,7 +286,6 @@
         grid-template-rows: auto 1fr;
         column-gap: 1rem;
         row-gap: 0.0rem; 
-
         grid-template-areas:
             "answersHeader hintHeader"
             "answersContent hintContent";
@@ -223,6 +297,10 @@
     }
 
     #symbolContent .box {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
         width: 35vw;
         aspect-ratio: 1 / 1;
     }
@@ -244,7 +322,6 @@
         display: grid;
         gap: 0.5rem;
         align-items: center;
-        
         grid-template-columns: repeat(6, 1fr);
         grid-template-rows: 1fr;
         grid-template-areas: none;
