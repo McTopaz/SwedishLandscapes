@@ -19,6 +19,7 @@ function setup() {
     }
 
     document.getElementById("favIcon").href = `${BASE_PATH}resources/images/Sweden512.png`;
+    console.log("Window size: ", window.innerWidth, "x", window.innerHeight);
 }
 
 function categories() {
