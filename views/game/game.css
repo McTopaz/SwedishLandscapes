@@ -92,20 +92,21 @@
     "sumIcon     sumCounter";
 }
 
-.answersGrid svg {
-    width: clamp(40px, 4.5vw, 80rem);
-    height: clamp(40px, 4.5vw, 80rem);
-}
-
 .check svg {
+  width: var(--answersSvgSize);
+  height: var(--answersSvgSize);
   color: var(--green);
 }
 
 .cross svg {
+  width: var(--answersSvgSize);
+  height: var(--answersSvgSize);
   color: var(--red);
 }
 
 .sum svg {
+  width: var(--answersSvgSize);
+  height: var(--answersSvgSize);
   color: var(--swedishBlue);
 }
 
