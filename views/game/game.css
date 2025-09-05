@@ -97,6 +97,18 @@
     height: clamp(40px, 4.5vw, 80rem);
 }
 
+.check svg {
+  color: var(--green);
+}
+
+.cross svg {
+  color: var(--red);
+}
+
+.sum svg {
+  color: var(--swedishBlue);
+}
+
 .header {
     font-size: var(--fontMedium);
     font-weight: bold;
