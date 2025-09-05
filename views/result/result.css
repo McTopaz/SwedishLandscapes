@@ -68,6 +68,24 @@
     grid-template-areas: none;
 }
 
+#check svg {
+  width: var(--answersSvgSize);
+  height: var(--answersSvgSize);
+  color: var(--green);
+}
+
+#cross svg {
+  width: var(--answersSvgSize);
+  height: var(--answersSvgSize);
+  color: var(--red);
+}
+
+#sum svg {
+  width: var(--answersSvgSize);
+  height: var(--answersSvgSize);
+  color: var(--swedishBlue);
+}
+
 .counter {
     font-size: var(--fontMedium);
     font-weight: bold;
