@@ -217,7 +217,7 @@ export class Game extends Base {
     onCorrectAnswer();
     this.#updateLandscapeIndicator(button);
     
-    if (button._clickHandler) {
+    if (this.#numberOfCategories == 1 && button._clickHandler) {
       button.removeEventListener('click', button._clickHandler);
       delete button._clickHandler;
     }
