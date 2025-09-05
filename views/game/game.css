@@ -287,11 +287,6 @@
         width: auto;
         object-fit: contain;
     }
-
-    .map-btn {
-        width: clamp(48px, 3vw, 75px);
-        height: clamp(48px, 3vw, 75px);
-    }
     
     .gridContainer {
         height: 100%; 
