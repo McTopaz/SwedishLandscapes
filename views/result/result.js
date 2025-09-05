@@ -6,10 +6,6 @@ import { showMenu } from "../../usecases/appFlow.js";
 
 export class Result extends Base {
 
-  #green = super.getStylePropertyByName("--green");
-  #red = super.getStylePropertyByName("--red");
-  #blue = super.getStylePropertyByName("--swedishBlue");
-
   init() {
     super.init();
 
@@ -25,16 +21,16 @@ export class Result extends Base {
     const cross = `${BASE_PATH}resources/images/svg/Cross.svg`;
     const sum = `${BASE_PATH}resources/images/svg/Sum.svg`;
 
-    this.#setupAnswerSvg(check, "check", this.#green);
-    this.#setupAnswerSvg(cross, "cross", this.#red);
-    this.#setupAnswerSvg(sum, "sum", this.#blue);
+    this.#setupAnswerSvg(check, "check");
+    this.#setupAnswerSvg(cross, "cross");
+    this.#setupAnswerSvg(sum, "sum");
 
     document.getElementById("correctCounter").innerText = game.correctAnswers;
     document.getElementById("incorrectCounter").innerText = game.incorrectAnswers;
     document.getElementById("numberOfItems").innerText = game.numberOfItems;
   }
 
-  async #setupAnswerSvg(svgPath, containerName, color) {
+  async #setupAnswerSvg(svgPath, containerName) {
     const container = document.getElementById(containerName);
     var svg = await this.#loadSvgInContainer(svgPath, container);
   }
