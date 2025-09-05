@@ -17,6 +17,21 @@
     justify-content: center;
 }
 
+.map-btn.check {
+    position: absolute;
+    width: var(--mapButtonSize);
+    height: var(--mapButtonSize);
+    display: grid;
+    align-items: end;
+    justify-content: center;
+}
+
+.map-btn.check svg {
+    width: var(--mapButtonSize);
+    height: var(--mapButtonSize);
+    color: var(--green);
+}
+
 .status-bar-container {
     width: 80%;
     height: 8px;

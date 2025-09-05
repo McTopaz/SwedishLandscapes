@@ -266,16 +266,13 @@ export class Game extends Base {
 async #changeButtonToCheckSvg(button) {
   button.style.backgroundImage = "none";
   const check = `${BASE_PATH}resources/images/svg/Check.svg`;
-  const size = super.getStylePropertyByName("--subTitle");
   const svg = await this.#loadSvgInContainer(check, button);
-  svg.style.color = this.#green;
-  svg.style.width = size;
-  svg.style.height = size;
-
+  
   const left = button.dataset.answerLeft;
   const top = button.dataset.answerTop;
   button.style.left = left;
   button.style.top = top;
+  button.classList.add('check');
 }
 
 #displayStatusBar(button, left) {
