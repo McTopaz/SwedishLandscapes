@@ -8,9 +8,7 @@ export class Game extends Base {
 
   #statusBarContainerName = 'status-bar-container';
   #numberOfCategories = game.categories.filter(c => c.IsSelected).length;
-
   #currentLandscape = null;
-  #yellow = super.getStylePropertyByName("--swedishYellow");
 
   init() {
     super.init();
