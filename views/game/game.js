@@ -49,8 +49,6 @@ export class Game extends Base {
     this.#ensureViewBox(svg);
     this.#scaleSvgToFit(svg);
 
-    svg.style.color = this.#yellow;
-
     container.addEventListener('click', (event) => {
         this.#hintPressed();
       });

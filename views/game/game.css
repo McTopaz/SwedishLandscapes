@@ -163,6 +163,10 @@
     color: black;
 }
 
+.hint svg {
+    color: var(--swedishYellow);
+}
+
 @media (min-width: 1920px) {
 
     .container {
