@@ -90,9 +90,11 @@ export class Game extends Base {
 
   #setupButtonHandlers() {
     document.querySelectorAll('.map-btn').forEach(btn => {
-      btn.addEventListener('click', (event) => {
+      const handler = (event) => {
         this.#handleLandscapeButtonPressed(event.currentTarget);
-      });
+      };
+      btn._clickHandler = handler;
+      btn.addEventListener('click', handler);
     });
   }
 
@@ -222,6 +224,12 @@ export class Game extends Base {
     this.#playSound(`${BASE_PATH}resources/sounds/Correct.wav`);
     onCorrectAnswer();
     this.#updateLandscapeIndicator(button);
+    
+    if (button._clickHandler) {
+      button.removeEventListener('click', button._clickHandler);
+      delete button._clickHandler;
+    }
+
     this.#displayLandscape();
   }
 
