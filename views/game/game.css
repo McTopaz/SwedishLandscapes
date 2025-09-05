@@ -41,17 +41,17 @@
     row-gap: 1rem;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
-        "symbolHeader   symbolContent"
-        "answersHeader  answersContent"
-        "hintHeader     hintContent";
+        "symbolHeader   symbolContent"
+        "answersHeader  answersContent"
+        "hintHeader     hintContent";
 }
 
-#symbolHeader   { grid-area: symbolHeader; }
-#answersHeader  { grid-area: answersHeader; }
-#hintHeader     { grid-area: hintHeader; }
-#symbolContent  { grid-area: symbolContent; }
+#symbolHeader   { grid-area: symbolHeader; }
+#answersHeader  { grid-area: answersHeader; }
+#hintHeader     { grid-area: hintHeader; }
+#symbolContent  { grid-area: symbolContent; }
 #answersContent { grid-area: answersContent; }
-#hintContent    { grid-area: hintContent; }
+#hintContent    { grid-area: hintContent; }
 
 .gridItem {
     display: grid;
@@ -87,9 +87,9 @@
     grid-template-columns: auto 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas:
-    "checkIcon   correctCounter"
-    "crossIcon   incorrectCounter"
-    "sumIcon     sumCounter";
+    "checkIcon  correctCounter"
+    "crossIcon  incorrectCounter"
+    "sumIcon    sumCounter";
 }
 
 .check svg {
