@@ -230,7 +230,7 @@ export class Game extends Base {
     this.#playSound(`${BASE_PATH}resources/sounds/Correct.wav`);
     onCorrectAnswer();
     //this.#updateLandscapeIndicator(button);
-    button.style.fill = 'rgb(0,200,100)';
+    button.classList.add("correctanswer");
     this.#shouldRemoveButtonHandler(button);    
     this.#displayLandscape();
   }
