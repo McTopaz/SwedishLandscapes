@@ -12,8 +12,8 @@
     background-position: center;
     background-repeat: no-repeat;
     
-    display: grid;
-    align-items: end;
+    display: flex;
+    align-items: flex-end;
     justify-content: center;
 }
 
@@ -35,8 +35,8 @@
 .status-bar-container {
     width: 80%;
     height: 8px;
-    margin-bottom: -2px;
-    display: grid;
+    margin-bottom: -5px;
+    display: flex;
     border-radius: var(--bigRadious);
     overflow: hidden;
 }
