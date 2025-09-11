@@ -31,13 +31,34 @@ export class Game extends Base {
   #setupImages() {
     var path = "";
     
-    path = `${BASE_PATH}resources/images/svg/SwedishLandscapes.svg`
-    document.getElementById('map').src = path;
+    // path = `${BASE_PATH}resources/images/svg/SwedishLandscapes.svg`
+    // document.getElementById('map').src = path;
+    this.#setupMap();
 
     path = `${BASE_PATH}resources/images/svg/Help.svg`
     document.getElementById('hint').src = path;
 
     this.#setupHint();
+  }
+
+  #setupMap() {
+    console.log(BASE_PATH);
+    const path = `${BASE_PATH}resources/images/svg/SwedishLandscapes.svg`
+    console.log(path);
+
+    fetch(path)
+      .then(res => res.text())
+      .then(svgText => {
+        document.getElementById('map').innerHTML = svgText;
+
+        const norrbotten = document.getElementById('Norrbotten');
+        norrbotten.style.fill = 'rgb(255,100,50)';
+        
+        norrbotten.addEventListener('click', () => {
+            console.log('Du klickade på Norrbotten!');
+            norrbotten.style.fill = 'rgb(0,200,100)';
+        });
+      });
   }
 
   async #setupHint() {

@@ -226,6 +226,12 @@
         display: block;
     }
 
+    .map svg {
+        height: 100%;
+        width: auto;
+        display: block;
+    }
+
     .menuSection {
         grid-column: 6;
         grid-row: 1;
@@ -296,15 +302,30 @@
 
     .map-container {
         width: auto;
+        height: 100%;
         margin-left: auto;
         overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
     }
 
     .map {
-        display: block;
         height: 100%;
         width: auto;
-        object-fit: contain;
+        display: block;
+    }
+
+    .map svg {
+        height: 100%;
+        width: auto;
+        display: block;
+    }
+
+    .map svg {
+        height: 100%;
+        width: auto;
+        display: block;
     }
     
     .gridContainer {
