@@ -73,7 +73,7 @@
     --buttonHeight: clamp(4.05rem, 7.29vw, 16.2rem);
     --categoryCheckboxSize: clamp(0.81rem, 1.62vw, 3.24rem);
     --categorySvgSize: clamp(1.62rem, 3.24vw, 6.48rem);
-    --mapButtonSize: clamp(0.9rem, 15vw, 10rem);
+    --mapButtonSize: clamp(0.9rem, 15vw, 7rem);
     --answersSvgSize: clamp(2.5rem, 100vw, 22rem);
   }
 }
