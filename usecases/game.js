@@ -60,3 +60,14 @@ export function onIncorrectAnswer() {
     }
 }
 
+export function isAllAnsweresCorrectForLandscape(landscape) {
+    const numberOfCategories = game.categories.filter(c => c.IsSelected).length;
+
+    if (numberOfCategories == 1) return true;
+
+    const anyLeft = game.landscapes.some(l => l.Name === landscape);
+    console.log(game.landscapes);
+    console.log(anyLeft);
+
+    return !anyLeft;
+}

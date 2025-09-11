@@ -1,6 +1,6 @@
 import { Base } from "../base/base.js";
 import { game } from "../../entities/models/game.js";
-import { getNextLandscape, onCorrectAnswer, onIncorrectAnswer } from "../../usecases/game.js";
+import { getNextLandscape, onCorrectAnswer, onIncorrectAnswer, isAllAnsweresCorrectForLandscape } from "../../usecases/game.js";
 import { showResult } from "../../usecases/appFlow.js";
 import { BASE_PATH } from "../../entities/models/urlPaths.js";
 
@@ -216,13 +216,18 @@ export class Game extends Base {
     this.#playSound(`${BASE_PATH}resources/sounds/Correct.wav`);
     onCorrectAnswer();
     this.#updateLandscapeIndicator(button);
-    
-    if (this.#numberOfCategories == 1 && button._clickHandler) {
+    this.#shouldRemoveButtonHandler(button);    
+    this.#displayLandscape();
+  }
+
+  #shouldRemoveButtonHandler(button) {
+    const landscape = button.dataset.landscape;
+    const isAllCorrect = isAllAnsweresCorrectForLandscape(landscape);
+
+    if (isAllCorrect && button._clickHandler) {
       button.removeEventListener('click', button._clickHandler);
       delete button._clickHandler;
     }
-
-    this.#displayLandscape();
   }
 
   #incorrerctAnswer() {
