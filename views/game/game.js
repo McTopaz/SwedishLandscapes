@@ -9,6 +9,11 @@ export class Game extends Base {
   #statusBarContainerName = 'status-bar-container';
   #numberOfCategories = game.categories.filter(c => c.IsSelected).length;
   #currentLandscape = null;
+  #landscapeIds = [
+    'Lappland','Norrbotten','Vasterbotten','Jamtland','Angermanland','Harjedalen','Medelpad','Halsingland','Gastrikland',
+    'Dalarna','Varmland','Vastmanland','Uppland','Narke','Sodermanland',
+    'Dalsland','Bohuslan','Vastergotland','Ostergotland','Halland','Smaland','Gotland','Oland','Blekinge','Skane'
+  ];
 
   init() {
     super.init();
@@ -38,22 +43,25 @@ export class Game extends Base {
       .then(res => res.text())
       .then(svgText => {
         document.getElementById('map').innerHTML = svgText;
-
-        const lappland = document.getElementById('Lappland');
-        const norrbotten = document.getElementById('Norrbotten');
-        this.#setupLandscapeClickable(lappland);
-        this.#setupLandscapeClickable(norrbotten);
+        this.#setupLandscapesClickable();
       });
   }
 
-  #setupLandscapeClickable(landscapeElement) {
-      const handler = (event) => {
-          this.#handleLandscapeButtonPressed(event.currentTarget);
-      };
+  #setupLandscapesClickable() {
+    this.#landscapeIds.forEach(landscape => {
+      this.#setupLandscapeClickable(landscape);
+    });
+  }
 
-      landscapeElement._clickHandler = handler;
-      landscapeElement.addEventListener('click', handler);
-      landscapeElement.dataset.landscape = landscapeElement.id;
+  #setupLandscapeClickable(landscape) {
+    const landscapeElement = document.getElementById(landscape);
+    const handler = (event) => {
+        this.#handleLandscapeButtonPressed(event.currentTarget);
+    };
+
+    landscapeElement._clickHandler = handler;
+    landscapeElement.addEventListener('click', handler);
+    landscapeElement.dataset.landscape = landscapeElement.id;
   }
 
   async #setupHint() {
