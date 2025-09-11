@@ -15,7 +15,6 @@ export class Game extends Base {
     this.#setupLandscapeIndicationContainers();
     this.#setupImages();
     this.#setupAnswers();
-    this.#setupButtonHandlers();
     this.#displayLandscape();
   }
 
@@ -29,36 +28,32 @@ export class Game extends Base {
   }
 
   #setupImages() {
-    var path = "";
-    
-    // path = `${BASE_PATH}resources/images/svg/SwedishLandscapes.svg`
-    // document.getElementById('map').src = path;
     this.#setupMap();
-
-    path = `${BASE_PATH}resources/images/svg/Help.svg`
-    document.getElementById('hint').src = path;
-
     this.#setupHint();
   }
 
   #setupMap() {
-    console.log(BASE_PATH);
     const path = `${BASE_PATH}resources/images/svg/SwedishLandscapes.svg`
-    console.log(path);
-
     fetch(path)
       .then(res => res.text())
       .then(svgText => {
         document.getElementById('map').innerHTML = svgText;
 
+        const lappland = document.getElementById('Lappland');
         const norrbotten = document.getElementById('Norrbotten');
-        norrbotten.style.fill = 'rgb(255,100,50)';
-        
-        norrbotten.addEventListener('click', () => {
-            console.log('Du klickade på Norrbotten!');
-            norrbotten.style.fill = 'rgb(0,200,100)';
-        });
+        this.#setupLandscapeClickable(lappland);
+        this.#setupLandscapeClickable(norrbotten);
       });
+  }
+
+  #setupLandscapeClickable(landscapeElement) {
+      const handler = (event) => {
+          this.#handleLandscapeButtonPressed(event.currentTarget);
+      };
+
+      landscapeElement._clickHandler = handler;
+      landscapeElement.addEventListener('click', handler);
+      landscapeElement.dataset.landscape = landscapeElement.id;
   }
 
   async #setupHint() {
@@ -99,16 +94,6 @@ export class Game extends Base {
     container.innerHTML = svgText.trim();
     const svgElement = container.querySelector('svg');
     return svgElement;
-  }
-
-  #setupButtonHandlers() {
-    document.querySelectorAll('.map-btn').forEach(btn => {
-      const handler = (event) => {
-        this.#handleLandscapeButtonPressed(event.currentTarget);
-      };
-      btn._clickHandler = handler;
-      btn.addEventListener('click', handler);
-    });
   }
 
   async #displayLandscape() {
@@ -236,7 +221,8 @@ export class Game extends Base {
     this.#updateAnswerCounters();
     this.#playSound(`${BASE_PATH}resources/sounds/Correct.wav`);
     onCorrectAnswer();
-    this.#updateLandscapeIndicator(button);
+    //this.#updateLandscapeIndicator(button);
+    button.style.fill = 'rgb(0,200,100)';
     this.#shouldRemoveButtonHandler(button);    
     this.#displayLandscape();
   }
