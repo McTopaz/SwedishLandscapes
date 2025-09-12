@@ -278,26 +278,29 @@ export class Game extends Base {
     }
   }
 
-  #incorrerctAnswer(landscapeElement) {
+  async #incorrerctAnswer(landscapeElement) {
     game.incorrectAnswers++;
-    this.#showIncorrectAnswer(landscapeElement);
+    await this.#flashIncorrectAnswer(landscapeElement);
     this.#updateAnswerCounters();
     this.#playSound(`${BASE_PATH}resources/sounds/Error.wav`);
     onIncorrectAnswer();
     this.#displayLandscape();
   }
 
-#showIncorrectAnswer(landscapeElement) {
-  const originalColor = landscapeElement.style.fill || getComputedStyle(landscapeElement).fill;
+  #flashIncorrectAnswer(landscapeElement) {
+    return new Promise(resolve => {
+      const originalColor = landscapeElement.style.fill || getComputedStyle(landscapeElement).fill;
+      
+      landscapeElement.style.fill = "";
+      landscapeElement.classList.add("incorrectanswer");
 
-  landscapeElement.style.fill = "";
-  landscapeElement.classList.add("incorrectanswer");
-
-  setTimeout(() => {
-    landscapeElement.classList.remove("incorrectanswer");
-    landscapeElement.style.fill = originalColor;
-  }, 500);
-}
+      setTimeout(() => {
+        landscapeElement.classList.remove("incorrectanswer");
+        landscapeElement.style.fill = originalColor;
+        resolve();
+      }, 500);
+    });
+  }
 
   #updateAnswerCounters() {
     const correctCounter = document.getElementById("correctCounter");
