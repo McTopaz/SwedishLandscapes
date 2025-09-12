@@ -37,25 +37,6 @@
     color: var(--green);
 }
 
-.status-bar-container {
-    width: 80%;
-    height: 8px;
-    margin-bottom: -5px;
-    display: flex;
-    border-radius: var(--bigRadious);
-    overflow: hidden;
-}
-
-.bar-part {
-    height: 100%;
-    background-color: #ccc;
-    border-left: 1px solid #fff;
-}
-
-.bar-part.correct {
-    background-color: var(--green);
-}
-
 .gridContainer {
     display: grid;
     row-gap: 1rem;

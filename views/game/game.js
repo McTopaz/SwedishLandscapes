@@ -6,7 +6,6 @@ import { BASE_PATH } from "../../entities/models/urlPaths.js";
 
 export class Game extends Base {
 
-  #statusBarContainerName = 'status-bar-container';
   #numberOfCategories = game.categories.filter(c => c.IsSelected).length;
   #currentLandscape = null;
   #landscapeIds = [
@@ -18,19 +17,9 @@ export class Game extends Base {
 
   init() {
     super.init();
-    this.#setupLandscapeIndicationContainers();
     this.#setupImages();
     this.#setupAnswers();
     this.#displayLandscape();
-  }
-
-  #setupLandscapeIndicationContainers() {
-    const landscapeButtons = document.querySelectorAll('.map-btn');
-    landscapeButtons.forEach(button => {
-      const statusBarContainer = document.createElement('div');
-      statusBarContainer.classList.add(this.#statusBarContainerName);
-      button.appendChild(statusBarContainer);
-    });
   }
 
   #setupImages() {
@@ -230,7 +219,6 @@ export class Game extends Base {
     this.#updateAnswerCounters();
     this.#playSound(`${BASE_PATH}resources/sounds/Correct.wav`);
     onCorrectAnswer();
-    //this.#updateLandscapeIndicator(button);
     this.#showLandscapeProgression(button);    
     this.#displayLandscape();
   }
@@ -288,55 +276,6 @@ export class Game extends Base {
     correctCounter.textContent = game.correctAnswers;
     incorrectCounter.textContent = game.incorrectAnswers;
   }
-
-#updateLandscapeIndicator(button) {
-  const container = button.querySelector(`.${this.#statusBarContainerName}`);
-  const buttonLandscapeName = button.dataset.landscape;
-  const left = game.landscapes.filter(l => l.Name === buttonLandscapeName).length;
-  
-  this.#clearStatusBar(container); 
-
-  if (left === 0) {
-    this.#changeButtonToCheckSvg(button);
-  } else {
-    this.#displayStatusBar(button, left);
-  }
-}
-
-#clearStatusBar(container) {
-    container.innerHTML = '';
-}
-
-async #changeButtonToCheckSvg(button) {
-  button.style.backgroundImage = "none";
-  const check = `${BASE_PATH}resources/images/svg/Check.svg`;
-  const svg = await this.#loadSvgInContainer(check, button);
-  
-  const left = button.dataset.answerLeft;
-  const top = button.dataset.answerTop;
-  button.style.left = left;
-  button.style.top = top;
-  button.classList.add('check');
-}
-
-#displayStatusBar(button, left) {
-  const container = button.querySelector(`.${this.#statusBarContainerName}`);
-  const width = 100 / this.#numberOfCategories;
-
-  const correctCount = this.#numberOfCategories - left;
-
-  for (let i = 0; i < this.#numberOfCategories; i++) {
-    const part = document.createElement('div');
-    part.style.width = `${width}%`;
-    part.classList.add('bar-part');
-
-    if (i < correctCount) {
-      part.classList.add('correct');
-    }
-    
-    container.appendChild(part);
-  }
-}
 
   #playSound(path) {
     const audio = new Audio(path);
