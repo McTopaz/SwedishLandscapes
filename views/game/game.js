@@ -223,16 +223,32 @@ export class Game extends Base {
     this.#displayLandscape();
   }
 
-  #showLandscapeProgression(button) {
+  async #showLandscapeProgression(button) {
     const landscape = button.dataset.landscape;
     const isAllCorrect = isAllAnsweresCorrectForLandscape(landscape);
-
+    
     if (isAllCorrect && button._clickHandler) {
       this.#markLandscapeComplete(button);
     }
     else {
+      await this.#flashCorrectAnswer(button);
       this.#assignLandscapeProgression(landscape, button);
     }
+  }
+
+  #flashCorrectAnswer(landscapeElement) {
+    return new Promise(resolve => {
+      const originalColor = landscapeElement.style.fill || getComputedStyle(landscapeElement).fill;
+
+      landscapeElement.style.fill = "";
+      landscapeElement.classList.add("correctanswer");
+
+      setTimeout(() => {
+        landscapeElement.classList.remove("correctanswer");
+        landscapeElement.style.fill = originalColor;
+        resolve();
+      }, 500);
+    });
   }
 
   #markLandscapeComplete(landscapeElement){
