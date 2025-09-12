@@ -274,6 +274,7 @@ export class Game extends Base {
 #showIncorrectAnswer(landscapeElement) {
   const originalColor = landscapeElement.style.fill || getComputedStyle(landscapeElement).fill;
 
+  landscapeElement.style.fill = "";
   landscapeElement.classList.add("incorrectanswer");
 
   setTimeout(() => {
