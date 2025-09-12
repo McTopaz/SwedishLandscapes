@@ -1,6 +1,6 @@
 import { Base } from "../base/base.js";
 import { game } from "../../entities/models/game.js";
-import { getNextLandscape, onCorrectAnswer, onIncorrectAnswer, isAllAnsweresCorrectForLandscape } from "../../usecases/game.js";
+import { getNextLandscape, onCorrectAnswer, onIncorrectAnswer, isAllAnsweresCorrectForLandscape, remainingAnswersForLandscape } from "../../usecases/game.js";
 import { showResult } from "../../usecases/appFlow.js";
 import { BASE_PATH } from "../../entities/models/urlPaths.js";
 
@@ -14,6 +14,7 @@ export class Game extends Base {
     'Dalarna','Varmland','Vastmanland','Uppland','Narke','Sodermanland',
     'Dalsland','Bohuslan','Vastergotland','Ostergotland','Halland','Smaland','Gotland','Oland','Blekinge','Skane'
   ];
+  #yellow = "#FFFF00";
 
   init() {
     super.init();
@@ -230,18 +231,46 @@ export class Game extends Base {
     this.#playSound(`${BASE_PATH}resources/sounds/Correct.wav`);
     onCorrectAnswer();
     //this.#updateLandscapeIndicator(button);
-    button.classList.add("correctanswer");
-    this.#shouldRemoveButtonHandler(button);    
+    this.#showLandscapeProgression(button);    
     this.#displayLandscape();
   }
 
-  #shouldRemoveButtonHandler(button) {
+  #showLandscapeProgression(button) {
     const landscape = button.dataset.landscape;
     const isAllCorrect = isAllAnsweresCorrectForLandscape(landscape);
 
     if (isAllCorrect && button._clickHandler) {
-      button.removeEventListener('click', button._clickHandler);
-      delete button._clickHandler;
+      this.#markLandscapeComplete(button);
+    }
+    else {
+      this.#assignLandscapeProgression(landscape, button);
+    }
+  }
+
+  #markLandscapeComplete(landscapeElement){
+    landscapeElement.style.fill = "";
+    landscapeElement.classList.add("correctanswer");
+    landscapeElement.removeEventListener('click', landscapeElement._clickHandler);
+    delete landscapeElement._clickHandler;
+  }
+
+  #assignLandscapeProgression(landscape, landscapeElement) {
+    const total = this.#numberOfCategories;
+    const remaining = remainingAnswersForLandscape(landscape);
+    const correct = total - remaining;
+
+    if (correct === 1) {
+      landscapeElement.style.fill = this.#yellow;
+    }
+    else {
+      const progress = (correct - 1) / (total - 1);
+      const eased = Math.pow(progress, 2);
+      const start = { r: 255, g: 255, b: 0 };
+      const end   = { r: 180, g: 220, b: 40 };
+      const r = Math.round(start.r + (end.r - start.r) * eased);
+      const g = Math.round(start.g + (end.g - start.g) * eased);
+      const b = Math.round(start.b + (end.b - start.b) * eased);
+      landscapeElement.style.fill = `rgb(${r},${g},${b})`;
     }
   }
 
