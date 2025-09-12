@@ -7,6 +7,11 @@
   transition: fill 0.3s ease;
 }
 
+.incorrectanswer {
+  fill: var(--red);
+  transition: fill 0.3s ease;
+}
+
 .map-btn {
     position: absolute;
     width: var(--mapButtonSize);

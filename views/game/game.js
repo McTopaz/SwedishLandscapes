@@ -211,7 +211,7 @@ export class Game extends Base {
 
     this.#currentLandscape.Name === landscape
       ? this.#correrctAnswer(button)
-      : this.#incorrerctAnswer();
+      : this.#incorrerctAnswer(button);
   }
 
   #correrctAnswer(button) {
@@ -262,13 +262,25 @@ export class Game extends Base {
     }
   }
 
-  #incorrerctAnswer() {
+  #incorrerctAnswer(landscapeElement) {
     game.incorrectAnswers++;
+    this.#showIncorrectAnswer(landscapeElement);
     this.#updateAnswerCounters();
     this.#playSound(`${BASE_PATH}resources/sounds/Error.wav`);
     onIncorrectAnswer();
     this.#displayLandscape();
   }
+
+#showIncorrectAnswer(landscapeElement) {
+  const originalColor = landscapeElement.style.fill || getComputedStyle(landscapeElement).fill;
+
+  landscapeElement.classList.add("incorrectanswer");
+
+  setTimeout(() => {
+    landscapeElement.classList.remove("incorrectanswer");
+    landscapeElement.style.fill = originalColor;
+  }, 500);
+}
 
   #updateAnswerCounters() {
     const correctCounter = document.getElementById("correctCounter");
