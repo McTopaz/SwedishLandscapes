@@ -265,16 +265,15 @@ export class Game extends Base {
 
     if (correct === 1) {
       landscapeElement.style.fill = this.#yellow;
-    }
-    else {
+    } else {
       const progress = (correct - 1) / (total - 1);
-      const eased = Math.pow(progress, 2);
-      const start = { r: 255, g: 255, b: 0 };
-      const end   = { r: 180, g: 220, b: 40 };
-      const r = Math.round(start.r + (end.r - start.r) * eased);
-      const g = Math.round(start.g + (end.g - start.g) * eased);
-      const b = Math.round(start.b + (end.b - start.b) * eased);
-      landscapeElement.style.fill = `rgb(${r},${g},${b})`;
+      const eased = Math.pow(progress, 0.5);
+      const startHue = 60;   // Yellow
+      const endHue = 170;    // Turquoise
+      const hue = startHue + (endHue - startHue) * eased;
+      const saturation = 100;
+      const lightness = 50;
+      landscapeElement.style.fill = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
     }
   }
 
