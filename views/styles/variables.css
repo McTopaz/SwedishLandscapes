@@ -36,6 +36,7 @@
   --categorySvgSize: clamp(2rem, 5vw, 4rem);
   --mapButtonSize: clamp(2.0rem, 1vw, 10rem);
   --answersSvgSize: clamp(2.5rem, 4.5vw, 80rem);
+  --optionsPanelButtons: clamp(1rem, 2vw, 5rem);
 }
 
 /* Desktops */
