@@ -13,6 +13,7 @@ export class Menu extends Base {
   init() {
     super.init();
     this.#loadColors();
+    this.#setupOptionsPanel();
     this.#displayCategories();
     this.#setupPlaySvgButton();
 
@@ -24,6 +25,40 @@ export class Menu extends Base {
   #loadColors() {
     this.#swedishBlue = super.getStylePropertyByName('--swedishBlue').trim();
     this.#swedishYellow = super.getStylePropertyByName('--swedishYellow').trim();
+  }
+
+  #setupOptionsPanel() {
+    this.#setupWinsowSizeButton();
+    this.#setupSourcesButton();    
+  }
+
+  #setupWinsowSizeButton() {
+    const svg =  `${BASE_PATH}resources/images/svg/WindowSize.svg`;
+    const container = document.getElementById('windowSize');
+    this.#loadSvgInContainer(svg, container);
+
+    container.addEventListener("click", () => {
+      const msg = "Window size: " + window.innerWidth + " x " + window.innerHeight;
+      window.alert(msg);
+    });
+  }
+
+  async #setupSourcesButton() {
+    const svg =  `${BASE_PATH}resources/images/svg/Link.svg`;
+    const container = document.getElementById('sources');
+    this.#loadSvgInContainer(svg, container);
+
+    container.addEventListener("click", async () => {
+      try {
+        const file = `${BASE_PATH}resources/Sources.txt`;
+        const response = await fetch(file);
+        const text = await response.text();
+        const message = "Sources:\n\n" + text;
+        window.alert(message);
+      } catch (err) {
+        console.error("Unable to read the source file at: " + file, err);
+      }
+    });
   }
 
   async #displayCategories() {

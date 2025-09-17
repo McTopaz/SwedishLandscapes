@@ -1,12 +1,10 @@
-https://www.jonasvonessen.se/kartor
 https://www.svgrepo.com/
 https://freeicons.io/
+https://sv.wikipedia.org/wiki/Landskapsvapen_i_Sverige
 https://kalenderspecialisten.se/landskapsblommor/
 https://www.havochvatten.se/arter-och-livsmiljoer/fakta-om-arter-och-livsmiljoer/fiskar-och-skaldjur/landskapsfiskar.html
 
-
 https://wikipedia.org
-* “Bas-karta: Sverigekarta-Landskap.svg av Lapplänning, baserad på arbete av Lokal_Profil, CC BY-SA 2.5 (Wikimedia Commons).”
+* Sverigekarta-Landskap.svg by Lapplänning & Lokal_Profil. CC BY-SA 2.5 (Wikimedia Commons).
 
 
-https://sv.wikipedia.org/wiki/Svenska_landskapssymboler

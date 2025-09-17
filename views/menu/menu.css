@@ -26,6 +26,38 @@
   color: black;
 }
 
+.spacer:has(.optionsPanel) {
+  position: relative;
+}
+
+.optionsPanel {
+    position: absolute;
+    top: var(--spacing);
+    right: 0;
+    z-index: 10;
+    display: flex;
+    gap: var(--spacingSmall);
+}
+
+.optionsPanel .box {
+    display: row;
+    gap: var(--spacingSmall);
+    align-items: center;
+}
+
+.windowSize svg {
+  height: var(--optionsPanelButtons);
+  width: var(--optionsPanelButtons);
+  cursor: pointer;
+  
+}
+
+.sources svg {
+  height: var(--optionsPanelButtons);
+  width: var(--optionsPanelButtons);
+  cursor: pointer;
+}
+
 .box {
   display: grid;
   grid-template-columns: 1fr;
