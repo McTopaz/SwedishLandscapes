@@ -144,17 +144,17 @@
   width: 100%;
   height: 100%;
   display: block;
-  color: var(--swedishBlue);    /* Only works due to the <path> element has the fill property set to "currentColor" /> */
+  color: var(--swedishBlue);    /* Only works due to the <path> element has the fill property set to "currentColor" */
 }
 
 .play:enabled {
-    background-color: var(--swedishYellow);
-    cursor: pointer;
+  background-color: var(--swedishYellow);
+  cursor: pointer;
 }
 
 .play:disabled {
-    background-color: var(--grey);
-    cursor: not-allowed;
+  background-color: var(--grey);
+  cursor: not-allowed;
 }
 
 @media (max-width: 600px) {

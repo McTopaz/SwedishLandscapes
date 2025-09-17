@@ -139,17 +139,19 @@ export class Menu extends Base {
       : this.#disablePlayButton();
   }
 
-#enablePlayButton() {
+  #enablePlayButton() {
     const playButton = document.getElementById("play");
+    playButton.disabled = false;
     playButton.classList.add('enabled');
     playButton.classList.remove('disabled');
-}
+  }
 
-#disablePlayButton() {
+  #disablePlayButton() {
     const playButton = document.getElementById("play");
+    playButton.disabled = true;
     playButton.classList.add('disabled');
     playButton.classList.remove('enabled');
-}
+  }
 
   #playClicked() {
     resetCounters();
