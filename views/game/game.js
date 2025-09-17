@@ -117,6 +117,16 @@ export class Game extends Base {
     else {
       this.#displayLandscapeGenericImage();
     }
+
+    this.#flashNewSymbol(); 
+  }
+
+  #flashNewSymbol() {
+    const symbolContent = document.getElementById("symbolContent");
+    symbolContent.classList.remove("flash");
+    void symbolContent.offsetWidth;
+    symbolContent.classList.add("flash");
+    setTimeout(() => symbolContent.classList.remove("flash"), 500);
   }
 
   async #displayLandscapeSvg() {
