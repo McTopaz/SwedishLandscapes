@@ -64,10 +64,10 @@ export function isAllAnsweresCorrectForLandscape(landscape) {
     const numberOfCategories = game.categories.filter(c => c.IsSelected).length;
     if (numberOfCategories == 1) return true;
 
-    const anyLeft = game.landscapes.some(l => l.Name === landscape);
+    const anyLeft = game.landscapes.some(l => l.Id === landscape);
     return !anyLeft;
 }
 
 export function remainingAnswersForLandscape(landscape) {
-    return game.landscapes.filter(l => l.Name === landscape).length;
+    return game.landscapes.filter(l => l.Id === landscape).length;
 }

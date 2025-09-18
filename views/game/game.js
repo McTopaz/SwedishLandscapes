@@ -219,7 +219,7 @@ export class Game extends Base {
     const landscape = button.dataset.landscape;
     console.log("Landscape button pressed:", landscape);
 
-    this.#currentLandscape.Name === landscape
+    this.#currentLandscape.Id === landscape
       ? this.#correrctAnswer(button)
       : this.#incorrerctAnswer(button);
   }

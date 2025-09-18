@@ -1,8 +1,13 @@
 export class Landscape {
-    constructor(name, path, text = "") {
+    constructor(id, name, path, text = "") {
+        this.id = id;
         this.name = name;
         this.path = path;
         this.text = text;
+    }
+
+    get Id() {
+        return this.id;
     }
 
     get Name() {
