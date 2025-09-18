@@ -41,7 +41,6 @@ function showView({ viewParts, viewClass }) {
       if (ViewClass && typeof ViewClass === "function") {
         currentViewInstance = new ViewClass();
         if (typeof currentViewInstance.init === "function") {
-          console.log("Initializing view:", viewClass);
           currentViewInstance.init();
         }
       } else {
