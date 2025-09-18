@@ -12,12 +12,6 @@ export function initializeApp() {
 
 function setup() {
     document.title = `${Title}`;
-
-    const footer = document.getElementById("footer");
-    if (footer) {
-        footer.textContent = `Version: ${Version}`;
-    }
-
     document.getElementById("favIcon").href = `${BASE_PATH}resources/images/Sweden512.png`;
     console.log("Window size: ", window.innerWidth, "x", window.innerHeight);
 }
