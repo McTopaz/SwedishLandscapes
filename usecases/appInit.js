@@ -11,7 +11,7 @@ export function initializeApp() {
 }
 
 function setup() {
-    document.title = `${Title} - V${Version}`;
+    document.title = `${Title}`;
 
     const footer = document.getElementById("footer");
     if (footer) {
