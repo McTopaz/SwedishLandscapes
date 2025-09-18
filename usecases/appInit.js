@@ -13,6 +13,7 @@ export function initializeApp() {
 function setup() {
     document.title = `${Title}`;
     document.getElementById("favIcon").href = `${BASE_PATH}resources/images/Sweden512.png`;
+    console.log(`${Title} ${Version}`);
     console.log("Window size: ", window.innerWidth, "x", window.innerHeight);
 }
 
