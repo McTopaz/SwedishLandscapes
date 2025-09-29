@@ -37,6 +37,28 @@
   --mapButtonSize: clamp(2.0rem, 1vw, 10rem);
   --answersSvgSize: clamp(2.5rem, 4.5vw, 80rem);
   --optionsPanelButtons: clamp(1rem, 2vw, 5rem);
+
+  --categhoriesMaxHeight: clamp(24rem, 55vh, 68rem);
+}
+
+/* Tablets landscape */
+@media (min-width: 601px) and (max-width: 1919px) {
+  :root {
+    --spacingTiny: clamp(0.2rem, 0.5vw, 1rem);
+    --spacingSmall: clamp(0.5rem, 1vw, 2rem);
+
+    --fontTiny: clamp(0.6rem, 1.0vw, 1rem);
+    --fontSmall: clamp(0.8rem, 1.5vw, 1.5rem);
+    --fontMedium: clamp(1rem, 2.0vw, 2rem);
+    --fontLarge: clamp(1.2rem, 2.5vw, 2.5rem);
+    --fontXL: clamp(1.5rem, 3.5vw, 3.5rem);
+
+    --buttonHeight: clamp(3rem, 6vw, 6rem);
+    --categoryCheckboxSize: clamp(0.8rem, 1.5vw, 2.5rem);
+    --categorySvgSize: clamp(1.5rem, 3vw, 3rem);
+    --mapButtonSize: clamp(1.5rem, 3vw, 5rem);
+    --answersSvgSize: clamp(2rem, 5vw, 10rem);
+  }
 }
 
 /* Desktops */

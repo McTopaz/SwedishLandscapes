@@ -163,7 +163,7 @@
     color: var(--swedishYellow);
 }
 
-@media (min-width: 1920px) {
+@media (orientation: landscape) {
 
     .container {
         display: grid;
@@ -281,7 +281,7 @@
 }
 
 
-@media (max-width: 600px) {
+@media (orientation: portrait) {
     .container {
         display: flex;
         flex-direction: column;
