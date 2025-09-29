@@ -87,7 +87,7 @@
 
 .categories {
   overflow-y: auto;
-  max-height: clamp(24rem, 55vh, 68rem);
+  max-height: var(--categhoriesMaxHeight);
   padding-right: var(--spacingTiny);
 }
 
