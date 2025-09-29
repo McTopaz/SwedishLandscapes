@@ -35,18 +35,20 @@ html, body {
 }
 
 .info {
-  display: flex;
-  justify-content: space-between;
-  background-color: transparent;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  width: 100%;
 }
 
-.corner {
-  white-space: nowrap;
+#createdBy {
+  justify-self: start;
+  text-align: left;
   font-size: var(--fontTiny);
 }
 
-@media (min-width: 600px) {
-  .corner {
-    padding: 0 3rem;
-  } 
+#version {
+  justify-self: end;
+  text-align: right;
+  font-size: var(--fontTiny);
 }
