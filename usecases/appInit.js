@@ -27,4 +27,15 @@ function categories() {
     game.categories.push(flower);
     game.categories.push(fish);
     game.categories.push(chemicalElement);
+
+    //addDebugCategories(0); // Use this to test how many categories can be displayed before the vertical scrollbar appears.
+}
+
+function addDebugCategories(numberOfCategories) {
+    // Note: Use this only for testing how many categories can be displayed before the vertical scrollbar appears.
+
+    for (let i = 0; i < numberOfCategories; i++) {
+        var debugCategory = new Category(CategoryTypes.ProvincialCoatOfArms, `Debug ${i}`, CategorySvg[CategoryTypes.ProvincialCoatOfArms], `${i}`, false);
+        game.categories.push(debugCategory);
+    }
 }
