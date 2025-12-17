@@ -1,6 +1,9 @@
 # SwedishLandscapes
 A game to select the appropriate landscape on the Swedish map when given a symbol representing that landscape.
 
+# URL to play direct online
+https://mctopaz.github.io/SwedishLandscapes/
+
 # Different window sizes
 There are many devices with various different window sizes. Make sure to test the layout with for several different sizes.
 Here is a list of different sizes:
